@@ -1,0 +1,1129 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Ипотечный калькулятор</title>
+    <meta name="description" content="Ипотечный калькулятор, учитывающий комиссии, периодические досрочные погашения,переменную ставку по кредитам,выдаваемым на приобретения жилья." />
+    <meta name="keywords" content="ипотечный калькулятор" />
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://an.yandex.ru">
+    <link rel="preconnect" href="https://yastatic.net">
+    <link rel="preconnect" href="https://avatars.mds.yandex.net">
+    <link rel="preload" href="https://an.yandex.ru/system/context.js" as="script">
+    <meta content="origin" name="referrer">
+
+    <link rel="stylesheet" type="text/css" href="/css/Calculators654CAF82F690879F.css" />
+
+    <script type="text/javascript">
+        (function(l,p){try{var r=function(){function e(a,d){this.window=a;this.document=d;this.j=[];this.i=this.l=null;try{var b=this.window.performance;this.loadTime=b.now();this.o=function(){return b.now()}}catch(c){this.loadTime=Date.now(),this.o=function(){return Date.now()}}this.m=this.loadTime;this.I();this.H();this.sendEvent=this.h;this.sendError=this.O;this.force=this.force;this.timeFromLoad=this.F;this.now=this.now;this.isBrowserSupported=this.A}e.prototype.A=function(){return this.L()};e.prototype.h=
+            function(a,d,b,c){var f=this;void 0===c&&(c=!1);try{var g={eventType:a+"."+d,clientTime:new Date,timeFromLoad:this.F(),url:this.window.location.href,windowWidth:this.window.innerWidth,windowHeight:this.window.innerHeight,screenWidth:this.window.screen&&this.window.screen.width,screenHeight:this.window.screen&&this.window.screen.height,isTouchable:this.B(),count:1},k=a.charAt(0).toLowerCase()+a.substr(1),h;for(h in b)h&&(g[0!==h.indexOf(k)?k+this.title(h):h]=b[h]);if(c)for(a=0;a<this.j.length;a++){var m=
+                this.j[a];if(this.K(m,g)){m.count++;return}}this.j=this.v(this.j,[g]);if(!this.l){var n=this.o();if(15E3<=n-this.m)return this.force(!1),null;this.l=setTimeout(function(){f.force(!1)},15E3-n+this.m)}return g}catch(q){return this.u(q),null}};e.prototype.O=function(a){this.h("App","Error",this.D(a),!0);this.force(!1)};e.prototype.D=function(a){for(var d={},b=0,c=["name","message","stack","code","context"];b<c.length;b++){var f=c[b];"string"===typeof a[f]&&(d["appError"+this.title(f)]=a[f])}return d};
+            e.prototype.force=function(a){var d=this;void 0===a&&(a=!0);try{if(0!==this.j.length){this.l&&(clearTimeout(this.l),this.l=null);var b=this.o();if(!a&&2E3>b-this.m)this.l=setTimeout(function(){return d.force(!1)},2E3-b+this.m);else{this.m=b;var c=this.j;this.j=[];this.i=null;a&&this.N(c)||this.M(c,function(f){f&&(d.j=d.v(c,d.j),d.u(f))})}}}catch(f){this.u(f)}};e.prototype.now=function(){return this.g(this.o())};e.prototype.F=function(){return this.g(this.o()-this.loadTime)};e.prototype.s=function(a,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  d,b){"function"===typeof a.addEventListener?a.addEventListener(d,b):this.C(a,d,b)};e.prototype.C=function(a,d,b){var c=a["on"+d];a["on"+d]=function(){"function"===typeof c&&c.apply(a,arguments);return b.apply(null,arguments)}};e.prototype.title=function(a){return a?a.charAt(0).toUpperCase()+a.substr(1):a};e.prototype.u=function(a){console.error(a)};e.prototype.v=function(a,d){if(128>a.length+d.length)return d.forEach(function(g){return a.push(g)}),a;for(var b=128-d.length,c=Array(128),f=0;f<b;f++)c[f]=
+                a[f+a.length-b];d.forEach(function(g){c[f++]=g});return c};e.prototype.N=function(a){try{if("function"===typeof this.window.navigator.sendBeacon&&this.window.navigator.sendBeacon("/api/analytics",JSON.stringify(a)))return!0}catch(d){}return!1};e.prototype.M=function(a,d){try{var b=this.window.XMLHttpRequest;if("undefined"===typeof b)d(Error("xmlRequest"),!1);else{var c=new b;c.onreadystatechange=function(){4===c.readyState&&(200===c.status?d(null,!0):d(Error("Error /api/analytics"),!1))};c.open("POST",
+                "/api/analytics");c.send(JSON.stringify(a))}}catch(f){d(f,!1)}};e.prototype.H=function(){var a=this.document.getElementsByTagName("html")[0]||this.document.body;a.className=(a.className?a.className+" ":"")+(this.B()?"touchable":"non-touchable");this.A()||(this.h("App","BrowserNotSupported"),this.force(!1))};e.prototype.L=function(){return"undefined"!==typeof this.window.history&&"function"===typeof l.history.pushState};e.prototype.I=function(){var a=this,d=this;this.C(this.window,"error",function(b,
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      c,f,g,k){if("Script error."!==b||c||f||g||k){var h=d.J(c);if(!h||this.document.location.host===h){b=k?d.D(k):{appErrorMessage:b};b.appErrorLineNumber=f;b.appErrorColumnNumber=g;b.appErrorUrl=c;c=b.appErrorStack;if(!h&&c)for(f=/http[s]:\/\/([\w\.]*)\//ig,g=f.exec(c);g;g=f.exec(c))if(this.document.location.host!==g[1])return;d.h("App","Error",b,!0);this.document.location.host===h&&d.force(!1)}}});this.s(this.document,"visibilitychange",function(){"hidden"===a.document.visibilityState?(a.h("App","Hidden"),
+                a.force(!0)):a.h("App","Visible")});this.s(this.document,"readystatechange",function(){if("complete"===a.document.readyState)if(a.window.performance&&"function"===typeof a.window.performance.getEntriesByType){var b=a.window.performance.getEntriesByType("navigation");(b=b.length?b[b.length-1]:null)&&a.h("App","DomComplete",{appConnectEnd:a.g(b.connectEnd),appConnectStart:a.g(b.connectStart),appDecodedBodySize:a.g(b.decodedBodySize),appDomComplete:a.g(b.domComplete),appDomContentLoadedEventEnd:a.g(b.domContentLoadedEventEnd),
+                appDomContentLoadedEventStart:a.g(b.domContentLoadedEventStart),appDomInteractive:a.g(b.domInteractive),appDomainLookupEnd:a.g(b.domainLookupEnd),appDomainLookupStart:a.g(b.domainLookupStart),appDuration:a.g(b.duration),appEncodedBodySize:a.g(b.encodedBodySize),appFetchStart:a.g(b.fetchStart),appLoadEventEnd:a.g(b.loadEventEnd),appLoadEventStart:a.g(b.loadEventStart),appRedirectCount:a.g(b.redirectCount),appRedirectEnd:a.g(b.redirectEnd),appRedirectStart:a.g(b.redirectStart),appRequestStart:a.g(b.requestStart),
+                appResponseEnd:a.g(b.responseEnd),appResponseStart:a.g(b.responseStart),appSecureConnectionStart:a.g(b.secureConnectionStart),appStartTime:a.g(b.startTime),appTransferSize:a.g(b.transferSize),appUnloadEventEnd:a.g(b.unloadEventEnd),appUnloadEventStart:a.g(b.unloadEventStart),appWorkerStart:a.g(b.workerStart)})}else a.h("App","DomComplete")});this.s(this.window,"click",function(){a.i?a.i.appClickCounter+=1:a.i=a.h("App","Activity",{appClickCounter:1,appKeyDownCounter:0})});this.s(this.window,"keydown",
+                function(){a.i?a.i.appKeyDownCounter+=1:a.i=a.h("App","Activity",{appClickCounter:0,appKeyDownCounter:1})})};e.prototype.g=function(a){var d=typeof a;if("undefined"!==d&&null!==a)return"number"!==d&&(a=+a.toString(),isNaN(a))?void 0:Math.round(a)};e.prototype.J=function(a){return(a=e.G.exec(a))&&a[1]};e.prototype.B=function(){if("ontouchstart"in this.window)return!0;var a=this.window.matchMedia;return"function"===typeof a&&(a=a.call(this.window,"(touch-enabled),(-webkit-touch-enabled),(-moz-touch-enabled),(-o-touch-enabled),(-ms-touch-enabled),(heartz)"))&&
+            a.matches?!0:!!this.window.DocumentTouch};e.prototype.K=function(a,d){if(!a||!d)return!1;var b=["clientTime","timeFromLoad","count"],c;for(c in a)if(c&&!(0<=b.indexOf(c))&&a[c]!==d[c])return!1;for(c in d)if(c&&!(0<=b.indexOf(c))&&a[c]!==d[c])return!1;return!0};e.G=/^(?:(?:http[s]?):\/)?\/?([^:\/\s]+)/ig;return e}();l.__server_tracer=l.__server_tracer||new r(l,p)}catch(e){console.error(e)}})(window,document);
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter79310 = new Ya.Metrika({
+                        id: 79310,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true, type: 1
+                    });
+                } catch (e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-17873686-1']);
+        _gaq.push(['_setDomainName', '.fincalculator.ru']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+
+        (function (d) { try { d.documentElement.className += ' js'; } catch (e) { } }(document))
+    </script>
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/ie.css" />
+    <script src="/js/ie/html5.js"></script>
+    <script src="/js/ie/respond.min.js"></script>
+
+    <script type="text/javascript" src="/js/ie/excanvas.min.js"></script>
+
+    <![endif]-->
+    <!--[if lte IE 7]>
+    <link rel="stylesheet" href="/css/ie7.css" />
+    <![endif]-->
+</head>
+<body >
+<noscript><div><img src="//mc.yandex.ru/watch/79310?cnt-class=1" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<div id="loading_layer" style="display:none"><img alt="Загрузка..." src="https://fincalculator.ru/img/ajax_loader.gif" /></div>
+<div id="maincontainer" class="clearfix">
+    <!-- header -->
+    <header>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <a class="brand" href="https://fincalculator.ru"><i class="icon-home icon-white"></i>fincalculator.ru</a>
+                    <div class="nav mobile-nav dropdown">
+                        <a href="javascript:void(0)" class="dropdown dropdown-toggle mobile-header" data-toggle="dropdown"><span>Ипотечный калькулятор<b class="caret"></b></span></a>
+                        <ul class="dropdown-menu">
+
+                            <li>
+                                Вклады
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalkulyator-vkladov">Калькулятор вкладов</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/raschet-ostatka-na-vsekh-vkladakh">Расчет остатка на всех вкладах</a>
+                            </li>
+                            <li>
+                                Кредиты
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kreditnyj-kalkulyator">Кредитный калькулятор</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/ipotechnyj-kalkulyator">Ипотечный калькулятор</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/brat-li-ipoteku">Брать ли ипотеку сейчас?</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalkulyator-avtokredita">Калькулятор автокредита</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalkulyator-potrebitelskogo-kredita">Калькулятор потребительского кредита</a>
+                            </li>
+                            <li>
+                                Банки
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/banki">Справочник банков</a>
+                            </li>
+                            <li>
+                                Все калькуляторы
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/skolko-stoit-vremya">Сколько стоит время</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalkulyator">Калькулятор онлайн</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalkulyator-dnej">Калькулятор дней</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalkulyator-vkladov">Калькулятор вкладов</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kreditnyj-kalkulyator">Кредитный калькулятор</a>
+                            </li>
+                            <li>
+                                <a href="https://fincalculator.ru/kalendar">Производственный календарь</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="nav" id="main-nav">
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">Вклады<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://fincalculator.ru/kalkulyator-vkladov">Калькулятор вкладов</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/raschet-ostatka-na-vsekh-vkladakh">Расчет остатка на всех вкладах</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">Кредиты<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://fincalculator.ru/kreditnyj-kalkulyator">Кредитный калькулятор</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/ipotechnyj-kalkulyator">Ипотечный калькулятор</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/brat-li-ipoteku">Брать ли ипотеку сейчас?</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kalkulyator-avtokredita">Калькулятор автокредита</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kalkulyator-potrebitelskogo-kredita">Калькулятор потребительского кредита</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">Банки<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://fincalculator.ru/banki">Справочник банков</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">Все калькуляторы<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="https://fincalculator.ru/skolko-stoit-vremya">Сколько стоит время</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kalkulyator">Калькулятор онлайн</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kalkulyator-dnej">Калькулятор дней</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kalkulyator-vkladov">Калькулятор вкладов</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kreditnyj-kalkulyator">Кредитный калькулятор</a>
+                                </li>
+                                <li>
+                                    <a href="https://fincalculator.ru/kalendar">Производственный календарь</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- sidebar -->
+    <a href="javascript:void(0)" class="sidebar_switch on_switch ttip_r" title="Показать / скрыть">Показать / скрыть</a>
+    <div class="sidebar">
+        <div class="antiScroll">
+            <div class="antiscroll-inner">
+                <div class="antiscroll-content">
+
+                    <a href="https://fincalculator.ru/files/LoanCalculatorSetup.exe" rel="sidebar" class="setup tool-menu"><i class="icon-th-large"></i><span>Установить на рабочий стол</span></a>
+                    <p class="sidebar-header">Расчет</p>
+                    <a href="javascript:void(0)" class="tool-menu" data-bind="click : createLink,clickBuble : false">
+                        <i class="icon-tag"></i><span>Ссылка на расчет</span>
+                    </a>
+                    <form>
+                        <div class="container-fluid export-buttons">
+                            <div class="row-fluid">
+                                <div class="fileupload fileupload-new all-column6" data-provides="fileupload">
+                    <span class="btn btn-file all-column12">
+                        <span class="fileupload-new">Загрузить</span>
+                        <span class="fileupload-exists">Загрузить</span>
+                        <input type="file" data-bind="'behaviour':'change','behaviour-arguments':[function(e){$root.importReport(e)}]" />
+                    </span>
+                                </div>
+                                <button class="btn all-column6" data-bind="click : downloadReport,clickBuble : false">
+                                    <span>Сохранить</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <p class="sidebar-header">Похожие калькуляторы</p>
+                    <div class="relevant-links">
+                        <a href="https://fincalculator.ru/dosrochnoe-pogashenie-ipoteki-chto-vybrat">Досрочное погашение ипотеки. Что выгоднее?</a><a href="https://fincalculator.ru/brat-li-ipoteku">Брать ли ипотеку сейчас?</a>        <div class="sidebar-text">
+                        Калькулятор, который поможет определить момент времени с
+                        минимальными расходами на приобретение недвижимости с использованием ипотеки применительно к вашим частным условиям.
+                    </div>
+                    </div>
+
+
+                    <p class="sidebar-header">Описание</p>
+                    <div>
+                        <h3 class="help-header" data-bind="behaviour:'toggleNext'">Ипотечный калькулятор с досрочным погашением</h3>
+                        <div class="sidebar-text">
+                            Нажимая на кнопку "Добавить досрочное погашение" возможно сформировать план, состоящий как из периодических, так и единовременных платежей, направленных на преждевременный возврат долга. Сюда также уместным будет ввести платеж из материнского капитала. В некоторых банках предусмотрены штрафные санкции, связанные с таким погашением, что также можно учесть в задаваемых комиссиях, указав условие действия таковой "при досрочном погашении".  В этом случае из суммы, указанной в плане, будут, в первую очередь, вычитаться все связанные комиссии, а лишь остаток направляться на погашение.
+                        </div>
+                        <h3 class="help-header" data-bind="behaviour:'toggleNext'">Калькулятор ипотечного кредита</h3>
+                        <div class="sidebar-text">
+                            При оценке затрат калькулятор ипотечного кредита учитывает множество дополнительных расходов,
+                            сопутствующих кредиту, которые могут серьезно увеличить полную стоимость кредита.
+                            Сюда входят как комиссии банка, так и различные требования по страхованию.
+                        </div>
+                        <h3 class="help-header" data-bind="behaviour:'toggleNext'">Калькулятор ипотеки с учетом дополнительных платежей</h3>
+                        <div class="sidebar-text">
+                            Даже, если банком заявлено, что комиссии по ипотечным кредитам отсутствуют,
+                            не стоит забывать о дополнительных тратах, которые напрямую не связаны с комиссиями,
+                            однако, вытекают из требований банков к объекту закладываемой недвижимости.
+                            Это может быть справедливо к различным требованиям по страхованию недвижимости,
+                            страхованию жизни заемщика, оплату услуг независимых компаний, которые будут производить оценку жилья.
+                            Ипотечный калькулятор поможет, в том числе и в оценке дополнительных затрат,
+                            выплачиваемых как единовременно при выдаче кредита, так и на периодической основе.
+                        </div>
+                        <h3 class="help-header" data-bind="behaviour:'toggleNext'">Какой тип платежей выбрать в ипотечном калькуляторе</h3>
+                        <div class="sidebar-text">
+                            <strong>Аннуитентная схема погашения</strong> подразумевает выплату каждый месяц одной и той же суммы по кредиту,
+                            при этом погашение долга на начальном этапе происходит медленнее, поскольку приходится выплачивать начисленные проценты по кредиту.
+                            При <strong>дифференцированных платежах</strong> в начальный период необходимо платить большие суммы,
+                            которые с каждым последующим разом будут становиться меньше.
+                            В течение всего срока кредита погашение основного долга происходит равными долями,
+                            но сумма начисленных процентов уменьшается каждый месяц.
+                            В абсолютном исчислении общая сумма переплат меньше при дифференцированной схеме,
+                            однако, важно помнить об инфляции, особенно в случае ипотечных кредитов,
+                            которые, как правило, берутся на очень длительные периоды.
+                            При высокой инфляции аннуитентная схема может оказаться существенно выгодней.
+                            Выражаясь простым языком, у Вас будет возможность на протяжении всего срока кредита купить больше товаров и услуг,
+                            поскольку на начальном этапе будет иметься больше свободных средств с большей покупательной способностью.
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main content -->
+    <div id="contentwrapper">
+        <div class="main-content">
+            <h1 class="heading">
+                Ипотечный калькулятор
+            </h1>
+
+
+
+            <div class="center-container">
+                <div class="calculator">
+                    <!-- ko with: loanParameters -->
+                    <div class="row-fluid">
+                        <div class="span2 phone-column4"><label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;amount&#39;}" for="loanParameters_____amount">Сумма</label></div>
+                        <div class="span4 phone-column8"><input class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;amount&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;amount&#39;},convertedValue : amount,convert : decimalToStringFormatter(2),convertBack : stringToDecimal,behaviour : &#39;formatNumber&#39;,behaviour-options : 2" id="loanParameters_____amount" name="loanParameters_____amount" type="text" /></div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2 phone-column4"><label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_periodValue&#39;}" for="loanParameters_____root_periodValue">Срок</label></div>
+                        <div class="span2 phone-column4"><input class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_periodValue&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_periodValue&#39;},convertedValue : $root.periodValue,convert : intToString,convertBack : stringToInt,behaviour : &#39;formatNumber&#39;,behaviour-options : 0" id="loanParameters_____root_periodValue" name="loanParameters_____root_periodValue" type="text" /></div>
+                        <div class="span2 phone-column4"><select class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_periodType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_periodType&#39;},value : $root.periodType,options : Dictionaries.loanPeriodTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____root_periodType" name="loanParameters_____root_periodType"></select></div>
+                        <div class="phone-new-row"></div>
+                        <div class="span2 phone-column4"><label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;date&#39;}" for="loanParameters_____date">Дата получения</label></div>
+                        <div class="span3 phone-column8"><input class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;date&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;date&#39;},convertedValue : date,convert : dateToString,convertBack : stringToDate,behaviour : &#39;datepicker&#39;,behaviour-options : {&#39;weekStart&#39;:1,&#39;format&#39;:&#39;dd.mm.yyyy&#39;,&#39;language&#39;:&#39;ru&#39;,&#39;todayHighlight&#39;:true}" id="loanParameters_____date" name="loanParameters_____date" type="text" /></div>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span2 phone-column4"><label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;rateType&#39;}" for="loanParameters_____rateType">Ставка</label></div>
+                        <div class="span4 phone-column8"><select class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;rateType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;rateType&#39;},value : rateType,options : Dictionaries.rateTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____rateType" name="loanParameters_____rateType"></select></div>
+                        <div class="phone-new-row"></div>
+                        <div class="span2 phone-offset4 phone-column4"><input class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;rate&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;rate&#39;},convertedValue : rate,convert : function(v){return decimalToStringFormatter(2)(v * 100);},convertBack : function(t){{return stringToDecimal(t)/100}},behaviour : &#39;formatNumber&#39;,behaviour-options : 2,visible : (rateType() == 1)" id="loanParameters_____rate" name="loanParameters_____rate" type="text" /></div>
+                        <div class="span3 phone-column4"><select class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;periodType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;periodType&#39;},value : periodType,options : Dictionaries.ratePeriodTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;,visible : (rateType() == 1)" id="loanParameters_____periodType" name="loanParameters_____periodType"></select></div>
+                    </div>
+                    <div class="row-fluid" data-bind="toggledVisible : (rateType() == 2)">
+                        <table class="table table-bordered offset2 span10 phone-column12">
+                            <thead>
+                            <tr>
+                                <th class="span1">
+                                    <span>&nbsp;&nbsp;&nbsp;</span>
+                                </th>
+                                <th class="span5">
+                                <span class="hidden-phone">
+                                    Дата вступления в силу
+                                </span>
+                                    <span class="visible-phone">
+                                    Дата
+                                </span>
+                                </th>
+                                <th class="span6">
+                                    Ставка
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- ko foreach: changedByDateRates -->
+                            <tr>
+                                <td class="span1">
+                                    <button class="btn" data-bind="click : function(){$parent.changedByDateRates.remove($data);},clickBuble : false,disable : $index() == 0" onclick="return false;"><i class="icon-remove icon-gray"></i></button>
+                                </td>
+                                <td class="span5">
+                                    <input class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;changedByDateRates&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;changedByDateRates&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;startDate&#39;},convertedValue : startDate,convert : dateToString,convertBack : stringToDate,behaviour : &#39;datepicker&#39;,behaviour-options : {&#39;weekStart&#39;:1,&#39;format&#39;:&#39;dd.mm.yyyy&#39;,&#39;language&#39;:&#39;ru&#39;,&#39;todayHighlight&#39;:true},disable : $index() == 0" id="loanParameters_____changedByDateRates__index_______startDate" name="loanParameters_____changedByDateRates__index_______startDate" type="text" />
+                                </td>
+                                <td class="span6">
+                                    <input class="all-column6" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;changedByDateRates&#39; + $index() + &#39;.&#39; + &#39;rate&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;changedByDateRates&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;rate&#39;},convertedValue : rate,convert : function(v){return decimalToStringFormatter(2)(v * 100);},convertBack : function(t){{return stringToDecimal(t)/100}},behaviour : &#39;formatNumber&#39;,behaviour-options : 2" id="loanParameters_____changedByDateRates__index_______rate" name="loanParameters_____changedByDateRates__index_______rate" type="text" />
+                                    <select class="all-column6" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;changedByDateRates&#39; + $index() + &#39;.&#39; + &#39;periodType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;changedByDateRates&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;periodType&#39;},value : periodType,options : Dictionaries.ratePeriodTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____changedByDateRates__index_______periodType" name="loanParameters_____changedByDateRates__index_______periodType"></select>
+                                </td>
+                            </tr>
+                            <!-- /ko -->
+                            <tr>
+                                <td colspan="3">
+                                    <button class="btn btn-block" data-bind="click : function(){changedByDateRates.push($root.newChangedByDateRate($data));},clickBuble : false" onclick="return false;"><i class="icon-plus icon-gray"></i> Добавить ставку</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="line"></div>
+                    <div class="row-fluid">
+                        <div class="span2 phone-column4"><label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentType&#39;}" for="loanParameters_____paymentType">Тип платежей</label></div>
+                        <div class="span4 phone-column8"><select class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentType&#39;},value : paymentType,options : Dictionaries.paymentTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____paymentType" name="loanParameters_____paymentType"></select></div>
+                        <div class="phone-new-row"></div>
+                        <div class="offset2 span4 phone-offset4 phone-column8">
+                            <input class="pull-left" data-bind="checked : $root.hasAdditionalPaymentSettings,attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_hasAdditionalPaymentSettings&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_hasAdditionalPaymentSettings&#39;}" id="loanParameters_____root_hasAdditionalPaymentSettings" name="loanParameters_____root_hasAdditionalPaymentSettings" type="checkbox" />
+                            <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_hasAdditionalPaymentSettings&#39;}" for="loanParameters_____root_hasAdditionalPaymentSettings">Расширенные настройки</label>
+                        </div>
+                    </div>
+                    <div data-bind="toggledVisible : $root.hasAdditionalPaymentSettings">
+                        <div class="row-fluid">
+                            <div class="offset2 span5 phone-column12">
+                                <select class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentRoundType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentRoundType&#39;},value : paymentRoundType,options : Dictionaries.paymentRoundTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____paymentRoundType" name="loanParameters_____paymentRoundType"></select>
+                            </div>
+                            <div class="phone-new-row"></div>
+                            <div class="span5 phone-column12">
+                                <select class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;percentRoundType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;percentRoundType&#39;},value : percentRoundType,options : Dictionaries.percentSumRoundType,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____percentRoundType" name="loanParameters_____percentRoundType"></select>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="offset2 span5 phone-column12">
+                                <select class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentDateType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;paymentDateType&#39;},value : paymentDateType,options : Dictionaries.paymentDateTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____paymentDateType" name="loanParameters_____paymentDateType"></select>
+                            </div>
+                            <div class="phone-new-row" data-bind="visible : $root.isFirstPaymentVisible"></div>
+                            <div class="span5 phone-column12" data-bind="visible : $root.isFirstPaymentVisible">
+                                <select class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;firstPaymentPolicy&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;firstPaymentPolicy&#39;},value : firstPaymentPolicy,options : Dictionaries.firstPaymentPolicy,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____firstPaymentPolicy" name="loanParameters_____firstPaymentPolicy"></select>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="offset1 span1 phone-column1">
+                                <input class="pull-right" data-bind="checked : $root.isWorkingDayTransferable,attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_isWorkingDayTransferable&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_isWorkingDayTransferable&#39;}" id="loanParameters_____root_isWorkingDayTransferable" name="loanParameters_____root_isWorkingDayTransferable" type="checkbox" />
+                            </div>
+                            <div class="span6 phone-column11">
+                                <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_isWorkingDayTransferable&#39;}" for="loanParameters_____root_isWorkingDayTransferable">Переносить дату, если платеж приходится на выходной </label>
+                            </div>
+                            <div class="phone-new-row" data-bind="visible : $root.isWorkingDayTransferable"></div>
+                            <div class="span4 phone-column12" data-bind="toggledVisible : $parent.isWorkingDayTransferable">
+                                <select class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_workingDayType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_workingDayType&#39;},value : $root.workingDayType,options : Dictionaries.workingCalendarTransferType,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____root_workingDayType" name="loanParameters_____root_workingDayType"></select>
+                            </div>
+                        </div>
+                        <div class="row-fluid" data-bind="visible : $root.isWorkingDayTransferable">
+                            <div class="offset1 span1 phone-column1">
+                                <input class="pull-right" data-bind="checked : isCalendarTransferTypeAppliedForPercents,attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;isCalendarTransferTypeAppliedForPercents&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;isCalendarTransferTypeAppliedForPercents&#39;}" id="loanParameters_____isCalendarTransferTypeAppliedForPercents" name="loanParameters_____isCalendarTransferTypeAppliedForPercents" type="checkbox" />
+                            </div>
+                            <div class="span10 phone-column11">
+                                <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;isCalendarTransferTypeAppliedForPercents&#39;}" for="loanParameters_____isCalendarTransferTypeAppliedForPercents">Начислять проценты в соответствии переносами платежей</label>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="offset1 span1 phone-column1">
+                                <input class="pull-right" data-bind="checked : tuneMonthAnnuity,attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;tuneMonthAnnuity&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;tuneMonthAnnuity&#39;}" id="loanParameters_____tuneMonthAnnuity" name="loanParameters_____tuneMonthAnnuity" type="checkbox" />
+                            </div>
+                            <div class="span10 phone-column11">
+                                <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;tuneMonthAnnuity&#39;}" for="loanParameters_____tuneMonthAnnuity">Последний платеж не может превышать аннуитет</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid" data-bind="toggledVisible : $root.hasAdditionalPaymentSettings">
+                        <div class="offset1 span1 phone-column1">
+                            <input class="pull-right" data-bind="checked : onlyPercentFirstly,attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;onlyPercentFirstly&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;onlyPercentFirstly&#39;}" id="loanParameters_____onlyPercentFirstly" name="loanParameters_____onlyPercentFirstly" type="checkbox" />
+                        </div>
+                        <div class="span4 phone-column11">
+                            <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;loanParameters&#39; + &#39;.&#39; + &#39;onlyPercentFirstly&#39;}" for="loanParameters_____onlyPercentFirstly">Кредитные каникулы первые</label>
+                        </div>
+                        <div class="phone-new-row"></div>
+                        <div class="span2 phone-offset4 phone-column4" data-bind="toggledVisible : onlyPercentFirstly">
+                            <input class="span12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_onlyPercentPeriodValue&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_onlyPercentPeriodValue&#39;},convertedValue : $root.onlyPercentPeriodValue,convert : intToString,convertBack : stringToInt,behaviour : &#39;formatNumber&#39;,behaviour-options : 0" id="loanParameters_____root_onlyPercentPeriodValue" name="loanParameters_____root_onlyPercentPeriodValue" type="text" />
+                        </div>
+                        <div class="span3 phone-column4" data-bind="toggledVisible : onlyPercentFirstly">
+                            <select class="all-column12" data-bind="attr : {id : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_onlyPercentPeriodType&#39;,name : &#39;loanParameters&#39; + &#39;.&#39; + &#39;root_onlyPercentPeriodType&#39;},value : $root.onlyPercentPeriodType,options : Dictionaries.loanPeriodTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanParameters_____root_onlyPercentPeriodType" name="loanParameters_____root_onlyPercentPeriodType"></select>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <div class="line"></div>
+                    <!-- ko foreach: commissionParameters -->
+                    <div class="commission-row">
+                        <div class="row-fluid">
+                            <div class="span2 hidden-phone">
+                                <label class="control-label multiline" data-bind="attr : {&#39;for&#39; : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;name&#39;}" for="commissionParameters__index_______name">Название комиссии</label>
+                            </div>
+                            <div class="span6 phone-column10 phone-first-column">
+                                <input class="all-column12" data-bind="attr : {id : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;name&#39;,name : &#39;commissionParameters&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;name&#39;},value : name" id="commissionParameters__index_______name" name="commissionParameters__index_______name" type="text" />
+                            </div>
+                            <div class="visible-phone phone-column2">
+                                <button class="btn" data-bind="click : function(){$parent.commissionParameters.remove($data);},clickBuble : false" onclick="return false;"><i class="icon-remove icon-gray"></i></button>
+                            </div>
+                            <div class="phone-new-row"></div>
+                            <div class="span3 phone-column12">
+                                <select class="all-column12" data-bind="attr : {id : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;periodicityType&#39;,name : &#39;commissionParameters&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;periodicityType&#39;},value : periodicityType,options : Dictionaries.periodicityTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="commissionParameters__index_______periodicityType" name="commissionParameters__index_______periodicityType"></select>
+                            </div>
+                            <div class="span1 hidden-phone">
+                                <button class="btn" data-bind="click : function(){$parent.commissionParameters.remove($data);},clickBuble : false" onclick="return false;"><i class="icon-remove icon-gray"></i></button>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span2 hidden-phone">
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;fixedAmount&#39;},visible : (relativeAmountType() == -1)" for="commissionParameters__index_______fixedAmount">Сумма</label>
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;relativeRate&#39;},visible : (relativeAmountType() != -1)" for="commissionParameters__index_______relativeRate">%</label>
+                            </div>
+                            <div class="span2 phone-column2 phone-first-column">
+                                <input class="all-column12" data-bind="attr : {id : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;fixedAmount&#39;,name : &#39;commissionParameters&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;fixedAmount&#39;},convertedValue : fixedAmount,convert : decimalToStringFormatter(2),convertBack : stringToDecimal,behaviour : &#39;formatNumber&#39;,behaviour-options : 2,visible : (relativeAmountType() == -1)" id="commissionParameters__index_______fixedAmount" name="commissionParameters__index_______fixedAmount" type="text" />
+                                <input class="all-column12" data-bind="attr : {id : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;relativeRate&#39;,name : &#39;commissionParameters&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;relativeRate&#39;},convertedValue : relativeRate,convert : function(v){return decimalToStringFormatter(2)(v * 100);},convertBack : function(t){{return stringToDecimal(t)/100}},behaviour : &#39;formatNumber&#39;,behaviour-options : 2,visible : (relativeAmountType() != -1)" id="commissionParameters__index_______relativeRate" name="commissionParameters__index_______relativeRate" type="text" />
+                            </div>
+                            <div class="span6 phone-column10">
+                                <select class="all-column12" data-bind="attr : {id : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;relativeAmountType&#39;,name : &#39;commissionParameters&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;relativeAmountType&#39;},value : relativeAmountType,options : (Linq.any([ServerModels.PeriodicityType.EveryPayment, ServerModels.PeriodicityType.EveryAdditionalRepayment], periodicityType()) ? Dictionaries.relativeCommissionAmountInstantPaymentTypes : Dictionaries.relativeCommissionAmountTypes),optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="commissionParameters__index_______relativeAmountType" name="commissionParameters__index_______relativeAmountType"></select>
+
+                            </div>
+                            <div class="phone-new-row"></div>
+                            <div class="span2 phone-column12" data-bind="visible : ((relativeAmountType() == 5) || (relativeAmountType() == 6))">
+                                <input class="all-column10" data-bind="attr : {id : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;relativeAdditionPercent&#39;,name : &#39;commissionParameters&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;relativeAdditionPercent&#39;},convertedValue : relativeAdditionPercent,convert : function(v){return decimalToStringFormatter(2)(v * 100);},convertBack : function(t){{return stringToDecimal(t)/100}},behaviour : &#39;formatNumber&#39;,behaviour-options : 2" id="commissionParameters__index_______relativeAdditionPercent" name="commissionParameters__index_______relativeAdditionPercent" type="text" />
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;commissionParameters&#39; + $index() + &#39;.&#39; + &#39;relativeAdditionPercent&#39;}" for="commissionParameters__index_______relativeAdditionPercent">%</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line invisible">
+                    </div>
+                    <!-- /ko -->
+                    <div class="row-fluid">
+                        <button class="btn btn-block" data-bind="click : function(){commissionParameters.push(newCommissionParameter());},clickBuble : false" onclick="return false;"><i class="icon-plus icon-gray"></i> Добавить комиссию</button>
+                    </div>
+                    <div class="row-fluid line"></div>
+                    <!-- ko foreach: loanAdvancedRepayments -->
+                    <div class="additional-repayment-row">
+                        <div class="row-fluid">
+                            <div class="span2 hidden-phone">
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;periodicityType&#39;}" for="loanAdvancedRepayments__index_______periodicityType">Периодичность</label>
+                            </div>
+                            <div class="span4 phone-column4 phone-first-column">
+                                <select class="all-column12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;periodicityType&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;periodicityType&#39;},value : periodicityType,options : Dictionaries.advancedRepaymentPeriodicityTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepayments__index_______periodicityType" name="loanAdvancedRepayments__index_______periodicityType"></select>
+                            </div>
+                            <div class="span2 hidden-phone">
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;amount&#39;}" for="loanAdvancedRepayments__index_______amount">Сумма</label>
+                            </div>
+                            <div class="span3 phone-column6">
+                                <input class="span12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;amount&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;amount&#39;},convertedValue : amount,convert : decimalToStringFormatter(2),convertBack : stringToDecimal,behaviour : &#39;formatNumber&#39;,behaviour-options : 2" id="loanAdvancedRepayments__index_______amount" name="loanAdvancedRepayments__index_______amount" type="text" />
+                            </div>
+                            <div class="span1 phone-column2">
+                                <button class="btn" data-bind="click : function(){$parent.loanAdvancedRepayments.remove($data);},clickBuble : false" onclick="return false;"><i class="icon-remove icon-gray"></i></button>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span2 hidden-phone">
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;},visible : (periodicityType() != 1)" for="loanAdvancedRepayments__index_______startDate">c</label>
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;},visible : (periodicityType() == 1)" for="loanAdvancedRepayments__index_______startDate">Дата </label>
+                            </div>
+                            <div class="span2 phone-column4 phone-first-column">
+                                <input class="span12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;startDate&#39;},convertedValue : startDate,convert : dateToString,convertBack : stringToDate,behaviour : &#39;datepicker&#39;,behaviour-options : {&#39;weekStart&#39;:1,&#39;format&#39;:&#39;dd.mm.yyyy&#39;,&#39;language&#39;:&#39;ru&#39;,&#39;todayHighlight&#39;:true}" id="loanAdvancedRepayments__index_______startDate" name="loanAdvancedRepayments__index_______startDate" type="text" />
+                            </div>
+                            <div class="hidden-desktop hidden-tablet phone-column4">
+                                <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;endDate&#39;},visible : (periodicityType() != 1)" for="loanAdvancedRepayments__index_______endDate">по</label>
+                            </div>
+                            <div class="span2 phone-column4" data-bind="visible : (periodicityType() != 1)">
+                                <input class="span12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;endDate&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;endDate&#39;},convertedValue : endDate,convert : dateToString,convertBack : stringToDate,behaviour : &#39;datepicker&#39;,behaviour-options : {&#39;weekStart&#39;:1,&#39;format&#39;:&#39;dd.mm.yyyy&#39;,&#39;language&#39;:&#39;ru&#39;,&#39;todayHighlight&#39;:true}" id="loanAdvancedRepayments__index_______endDate" name="loanAdvancedRepayments__index_______endDate" type="text" />
+                            </div>
+                            <div class="phone-new-row" data-bind="visible : (!payOnDayOfLoanPayment() && (periodicityType() != 1))"></div>
+                            <div class="span6 phone-column12" data-bind="visible : (!payOnDayOfLoanPayment() && (periodicityType() != 1))">
+                                <select class="span12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;paymentCalendarType&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;paymentCalendarType&#39;},value : paymentCalendarType,options : Dictionaries.paymentCalendarTransferType,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepayments__index_______paymentCalendarType" name="loanAdvancedRepayments__index_______paymentCalendarType"></select>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span2 phone-column1">
+                                <input class="pull-right" data-bind="checked : payOnDayOfLoanPayment,attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;payOnDayOfLoanPayment&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;payOnDayOfLoanPayment&#39;}" id="loanAdvancedRepayments__index_______payOnDayOfLoanPayment" name="loanAdvancedRepayments__index_______payOnDayOfLoanPayment" type="checkbox" />
+                            </div>
+                            <div class="span8 phone-column11">
+                                <label class="control-label pull-left long-checkbox-label phone-multiline" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;payOnDayOfLoanPayment&#39;}" for="loanAdvancedRepayments__index_______payOnDayOfLoanPayment">Платить в день выплаты очередного ежемесячного платежа</label>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span2 phone-column4">
+                                <label class="control-label hidden-phone multiline" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;recalculationType&#39;}" for="loanAdvancedRepayments__index_______recalculationType">Пересчет графика платежей</label>
+                                <label class="control-label hidden-desktop hidden-tablet multiline" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;recalculationType&#39;}" for="loanAdvancedRepayments__index_______recalculationType">Пересчет графика</label>
+                            </div>
+                            <div class="span4 phone-column8">
+                                <select class="all-column12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;recalculationType&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;recalculationType&#39;},value : recalculationType,options : Dictionaries.advancedRepaymentRecalculationType,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepayments__index_______recalculationType" name="loanAdvancedRepayments__index_______recalculationType"></select>
+                            </div>
+                            <!-- ko ifnot: payOnDayOfLoanPayment -->
+                            <div class="phone-new-row"></div>
+                            <div class="span6 phone-column12">
+                                <select class="all-column12" data-bind="attr : {id : &#39;loanAdvancedRepayments&#39; + $index() + &#39;.&#39; + &#39;firstPaymentPolicy&#39;,name : &#39;loanAdvancedRepayments&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;firstPaymentPolicy&#39;},value : firstPaymentPolicy,options : Dictionaries.advancedRepaymentFirstPaymentPolicy,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepayments__index_______firstPaymentPolicy" name="loanAdvancedRepayments__index_______firstPaymentPolicy"></select>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                    <div class="line invisible">
+                    </div>
+                    <!-- /ko -->
+                    <div class="row-fluid">
+                        <button class="btn btn-block" data-bind="click : function(){loanAdvancedRepayments.push(newAdvancedRepayment());},clickBuble : false" onclick="return false;"><i class="icon-plus icon-gray"></i> Добавить досрочное погашение</button>
+                    </div>
+                    <!-- ko with: loanAdvancedRepaymentPlan -->
+                    <div class="row-fluid">
+                        <div class="span1 phone-column1">
+                            <input class="pull-right" data-bind="checked : $root.hasPlan,attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;root_hasPlan&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;root_hasPlan&#39;}" id="loanAdvancedRepaymentPlan_____root_hasPlan" name="loanAdvancedRepaymentPlan_____root_hasPlan" type="checkbox" />
+                        </div>
+                        <div class="span11 phone-column11">
+                            <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;root_hasPlan&#39;},css : {&#39;bold-link&#39; : $root.hasPlan}" for="loanAdvancedRepaymentPlan_____root_hasPlan">Рассчитать оптимальный план погашения кредита по выделенному бюджету</label>
+                        </div>
+                    </div>
+                    <div data-bind="toggledVisible : $root.hasPlan">
+                        <div class="row-fluid">
+                            <div class="span1 phone-column1">
+                                <input class="pull-right" data-bind="checked : payOnDayOfLoanPayment,attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;payOnDayOfLoanPayment&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;payOnDayOfLoanPayment&#39;}" id="loanAdvancedRepaymentPlan_____payOnDayOfLoanPayment" name="loanAdvancedRepaymentPlan_____payOnDayOfLoanPayment" type="checkbox" />
+                            </div>
+                            <div class="span9 phone-column11">
+                                <label class="control-label pull-left long-checkbox-label phone-multiline" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;payOnDayOfLoanPayment&#39;}" for="loanAdvancedRepaymentPlan_____payOnDayOfLoanPayment">Досрочное погашение кредита возможно только в день очередного платежа</label>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span2 phone-column4">
+                                <label class="control-label hidden-phone multiline" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;recalculationType&#39;}" for="loanAdvancedRepaymentPlan_____recalculationType">Пересчет графика платежей</label>
+                                <label class="control-label hidden-desktop hidden-tablet multiline" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;recalculationType&#39;}" for="loanAdvancedRepaymentPlan_____recalculationType">Пересчет графика</label>
+                            </div>
+                            <div class="span4 phone-column8">
+                                <select class="all-column12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;recalculationType&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;recalculationType&#39;},value : recalculationType,options : Dictionaries.advancedRepaymentRecalculationType,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepaymentPlan_____recalculationType" name="loanAdvancedRepaymentPlan_____recalculationType"></select>
+                            </div>
+                            <!-- ko ifnot: payOnDayOfLoanPayment -->
+                            <div class="phone-new-row"></div>
+                            <div class="span6 phone-column12">
+                                <select class="all-column12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;firstPaymentPolicy&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;firstPaymentPolicy&#39;},value : firstPaymentPolicy,options : Dictionaries.advancedRepaymentFirstPaymentPolicy,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepaymentPlan_____firstPaymentPolicy" name="loanAdvancedRepaymentPlan_____firstPaymentPolicy"></select>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                        <div class="line">
+                        </div>
+                        <label class="control-label pull-left">
+                            Ниже формируется бюджет, из которого будут оплачены все расходы, связанные с погашением кредита. <a target="_blank" href="https://fincalculator.ru/articles/kak-optimalno-pogashat-kredit">Подробнее...</a>
+                        </label>
+                        <div class="clearfix">
+                        </div>
+                        <!-- ko foreach: incomes -->
+                        <div class="additional-repayment-row">
+                            <div class="row-fluid">
+                                <div class="span2 hidden-phone">
+                                    <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;periodicityType&#39;}" for="loanAdvancedRepaymentPlan_____incomes__index_______periodicityType">Периодичность</label>
+                                </div>
+                                <div class="span4 phone-column4 phone-first-column">
+                                    <select class="all-column12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;periodicityType&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;periodicityType&#39;},value : periodicityType,options : Dictionaries.advancedRepaymentPeriodicityTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepaymentPlan_____incomes__index_______periodicityType" name="loanAdvancedRepaymentPlan_____incomes__index_______periodicityType"></select>
+                                </div>
+                                <div class="span2 hidden-phone">
+                                    <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;amount&#39;}" for="loanAdvancedRepaymentPlan_____incomes__index_______amount">Сумма</label>
+                                </div>
+                                <div class="span3 phone-column6">
+                                    <input class="span12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;amount&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;amount&#39;},convertedValue : amount,convert : decimalToStringFormatter(2),convertBack : stringToDecimal,behaviour : &#39;formatNumber&#39;,behaviour-options : 2" id="loanAdvancedRepaymentPlan_____incomes__index_______amount" name="loanAdvancedRepaymentPlan_____incomes__index_______amount" type="text" />
+                                </div>
+                                <div class="span1 phone-column2">
+                                    <button class="btn" data-bind="click : function(){$root.loanAdvancedRepaymentPlan().incomes.remove($data);},clickBuble : false" onclick="return false;"><i class="icon-remove icon-gray"></i></button>
+                                </div>
+                            </div>
+                            <div class="row-fluid">
+                                <div class="span2 hidden-phone">
+                                    <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;},visible : (periodicityType() != 1)" for="loanAdvancedRepaymentPlan_____incomes__index_______startDate">c</label>
+                                    <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;},visible : (periodicityType() == 1)" for="loanAdvancedRepaymentPlan_____incomes__index_______startDate">Дата </label>
+                                </div>
+                                <div class="span2 phone-column4 phone-first-column">
+                                    <input class="span12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;startDate&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;startDate&#39;},convertedValue : startDate,convert : dateToString,convertBack : stringToDate,behaviour : &#39;datepicker&#39;,behaviour-options : {&#39;weekStart&#39;:1,&#39;format&#39;:&#39;dd.mm.yyyy&#39;,&#39;language&#39;:&#39;ru&#39;,&#39;todayHighlight&#39;:true}" id="loanAdvancedRepaymentPlan_____incomes__index_______startDate" name="loanAdvancedRepaymentPlan_____incomes__index_______startDate" type="text" />
+                                </div>
+                                <div class="hidden-desktop hidden-tablet phone-column4">
+                                    <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;endDate&#39;},visible : (periodicityType() != 1)" for="loanAdvancedRepaymentPlan_____incomes__index_______endDate">по</label>
+                                </div>
+                                <div class="span2 phone-column4" data-bind="visible : (periodicityType() != 1)">
+                                    <input class="span12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;endDate&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;endDate&#39;},convertedValue : endDate,convert : dateToString,convertBack : stringToDate,behaviour : &#39;datepicker&#39;,behaviour-options : {&#39;weekStart&#39;:1,&#39;format&#39;:&#39;dd.mm.yyyy&#39;,&#39;language&#39;:&#39;ru&#39;,&#39;todayHighlight&#39;:true}" id="loanAdvancedRepaymentPlan_____incomes__index_______endDate" name="loanAdvancedRepaymentPlan_____incomes__index_______endDate" type="text" />
+                                </div>
+                                <!-- ko ifnot: $parent.payOnDayOfLoanPayment -->
+                                <div class="phone-new-row" data-bind="visible : (periodicityType() != 1)"></div>
+                                <div class="span6 phone-column12" data-bind="visible : (periodicityType() != 1)">
+                                    <select class="span12" data-bind="attr : {id : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + $index() + &#39;.&#39; + &#39;paymentCalendarType&#39;,name : &#39;loanAdvancedRepaymentPlan&#39; + &#39;.&#39; + &#39;incomes&#39; + &#39;[&#39; + $index() + &#39;].&#39; + &#39;paymentCalendarType&#39;},value : paymentCalendarType,options : Dictionaries.paymentCalendarTransferType,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;" id="loanAdvancedRepaymentPlan_____incomes__index_______paymentCalendarType" name="loanAdvancedRepaymentPlan_____incomes__index_______paymentCalendarType"></select>
+                                </div>
+                                <!-- /ko -->
+                            </div>
+                        </div>
+                        <div class="line invisible">
+                        </div>
+                        <!-- /ko -->
+                        <div class="row-fluid">
+                            <button class="btn btn-block" data-bind="click : function(){incomes.push($root.newAdvancedRepaymentIncome());},clickBuble : false" onclick="return false;"><i class="icon-plus icon-gray"></i> Добавить статью бюджета на погашение кредита</button>
+                        </div>
+                    </div>
+                    <!-- /ko -->
+                    <div class="row-fluid line"></div>
+                    <div class="row-fluid calc-row">
+                        <!-- ko with: inflationParameters -->
+                        <div class="span1 phone-column1">
+                            <input class="pull-right" data-bind="checked : isDiscounted,attr : {id : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;isDiscounted&#39;,name : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;isDiscounted&#39;}" id="inflationParameters_____isDiscounted" name="inflationParameters_____isDiscounted" type="checkbox" />
+                        </div>
+                        <div class="span3 phone-column4">
+                            <label class="control-label pull-left" data-bind="attr : {&#39;for&#39; : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;isDiscounted&#39;}" for="inflationParameters_____isDiscounted">Учитывать инфляцию</label>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko with: inflationParameters -->
+                        <!-- ko if: isDiscounted -->
+                        <div class="span2 phone-column3">
+                            <input class="all-column12" data-bind="attr : {id : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;rate&#39;,name : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;rate&#39;},convertedValue : rate,convert : function(v){return decimalToStringFormatter(2)(v * 100);},convertBack : function(t){{return stringToDecimal(t)/100}},behaviour : &#39;formatNumber&#39;,behaviour-options : 2,visible : isDiscounted" id="inflationParameters_____rate" name="inflationParameters_____rate" type="text" />
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko if: isDiscounted -->
+                        <div class="span2 phone-column4">
+                            <select class="all-column12" data-bind="attr : {id : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;periodType&#39;,name : &#39;inflationParameters&#39; + &#39;.&#39; + &#39;periodType&#39;},value : periodType,options : Dictionaries.ratePeriodTypes,optionsValue : &#39;key&#39;,optionsText : &#39;value&#39;,visible : isDiscounted" id="inflationParameters_____periodType" name="inflationParameters_____periodType"></select>
+                        </div>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        <div class="phone-new-row"></div>
+                        <div class="span4" data-bind="css : {&#39;span4&#39; : inflationParameters().isDiscounted,&#39;span8&#39; : function(){return !inflationParameters().isDiscounted(); }}">
+                            <button class="btn btn-block" data-bind="click : calculate,clickBuble : false,css : {'btn-primary' : !isCalculationActual() && !isCalculating()},disable : isCalculating">
+                                Рассчитать
+                                <img src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." data-bind="visible : isCalculating" />
+                            </button>
+                        </div>
+                    </div>
+                    <div id="yandex-mobile-maxi"></div>
+                    <div data-bind="text : serverError" class="error"></div>
+                    <div class="row-fluid line">
+                    </div>
+
+                    <div class="row-fluid" data-bind="toggledVisible : isCalculationActual">
+                        <!-- ko with: result -->
+                        <!-- ko with: total -->
+                        <div class="row-fluid result-row">
+                            <div class="all-column6 result-label">
+                                <span class="pull-right" data-bind="text : &#39;Сумма платежа в месяц:&#39;"></span>
+                            </div>
+                            <div class="all-column6 result-value ">
+                                <span class="pull-left" data-bind="text : minMonthPayment === maxMonthPayment ? decimalToString(maxMonthPayment) : (decimalToString(minMonthPayment) + &#39; ... &#39; + decimalToString(maxMonthPayment))"></span>
+                            </div>
+                        </div>
+                        <div class="row-fluid result-row">
+                            <div class="all-column6 result-label">
+                                <span class="pull-right" data-bind="text : &#39;Всего платежей:&#39;"></span>
+                            </div>
+                            <div class="all-column6 result-value ">
+                                <span class="pull-left" data-bind="text : decimalToString(totalAmount)"></span>
+                            </div>
+                        </div>
+                        <div class="row-fluid result-row">
+                            <div class="all-column6 result-label">
+                                <span class="pull-right" data-bind="text : &#39;Переплата:&#39;"></span>
+                            </div>
+                            <div class="all-column6 result-value ">
+                                <span class="pull-left" data-bind="text : decimalToString(totalOverpayment) + &#39; (&#39; + decimalToString(relativeOverpayment * 100) + &#39;% от суммы кредита)&#39;"></span>
+                            </div>
+                        </div>
+                        <div class="row-fluid result-row">
+                            <div class="all-column6 result-label">
+                                <span class="pull-right" data-bind="text : &#39;Полная стоимость кредита:&#39;"></span>
+                            </div>
+                            <div class="all-column6 result-value ">
+                                <span class="pull-left" data-bind="text : decimalToString(xirr * 100, 3) + &#39;%&#39;"></span>
+                            </div>
+                        </div>
+                        <div class="row-fluid result-row" data-bind="visible : $root.inflationParameters().isDiscounted">
+                            <div class="all-column6 result-label">
+                                <span class="pull-right" data-bind="text : &#39;Всего платежей с учетом инфляции:&#39;"></span>
+                            </div>
+                            <div class="all-column6 result-value inflation">
+                                <span class="pull-left" data-bind="text : decimalToString(inflationTotalAmount)"></span>
+                            </div>
+                        </div>
+                        <div class="row-fluid result-row" data-bind="visible : $root.inflationParameters().isDiscounted">
+                            <div class="all-column6 result-label">
+                                <span class="pull-right" data-bind="text : &#39;Переплата с учетом инфляции:&#39;"></span>
+                            </div>
+                            <div class="all-column6 result-value inflation">
+                                <span class="pull-left" data-bind="text : decimalToString(inflationTotalOverpayment) + &#39; (&#39; + decimalToString(inflationRelativeOverpayment * 100) + &#39;% от суммы кредита)&#39;"></span>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <!-- ko with: $root.chartParameters -->
+                        <div class="charts">
+                            <div class="row-fluid">
+                                <div class="span12 chart-header">
+                                    <input data-bind="checked : $root.showCharts,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;root_showCharts&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;root_showCharts&#39;}" id="result_____root_chartParameters_____root_showCharts" name="result_____root_chartParameters_____root_showCharts" type="checkbox" />
+                                    <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;root_showCharts&#39;}" for="result_____root_chartParameters_____root_showCharts">Показать графики</label>
+                                </div>
+                            </div>
+
+                            <div data-bind="toggledVisible : $root.showCharts">
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isPaymentAndRemainderChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPaymentAndRemainderChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPaymentAndRemainderChartShown&#39;}" id="result_____root_chartParameters_____isPaymentAndRemainderChartShown" name="result_____root_chartParameters_____isPaymentAndRemainderChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPaymentAndRemainderChartShown&#39;}" for="result_____root_chartParameters_____isPaymentAndRemainderChartShown">Выплата процентов и погашение задолженности</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isPaymentAndRemainderChartShown">
+                                    <div id="isPaymentAndRemainderChartShownChart" class="chart">
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isPeriodMonthChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPeriodMonthChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPeriodMonthChartShown&#39;}" id="result_____root_chartParameters_____isPeriodMonthChartShown" name="result_____root_chartParameters_____isPeriodMonthChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPeriodMonthChartShown&#39;}" for="result_____root_chartParameters_____isPeriodMonthChartShown">Месячный платеж от срока</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isPeriodMonthChartShown">
+                                    <div id="isPeriodMonthChartShownChart" class="chart">
+                                        <!-- ko if: $root.chartsAreBeingCalculated -->
+                                        <img class="loader" src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." />
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isPeriodOverpaymentChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPeriodOverpaymentChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPeriodOverpaymentChartShown&#39;}" id="result_____root_chartParameters_____isPeriodOverpaymentChartShown" name="result_____root_chartParameters_____isPeriodOverpaymentChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isPeriodOverpaymentChartShown&#39;}" for="result_____root_chartParameters_____isPeriodOverpaymentChartShown">Переплата от срока</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isPeriodOverpaymentChartShown">
+                                    <div id="isPeriodOverpaymentChartShownChart" class="chart">
+                                        <!-- ko if: $root.chartsAreBeingCalculated -->
+                                        <img class="loader" src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." />
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isAmountMonthChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isAmountMonthChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isAmountMonthChartShown&#39;}" id="result_____root_chartParameters_____isAmountMonthChartShown" name="result_____root_chartParameters_____isAmountMonthChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isAmountMonthChartShown&#39;}" for="result_____root_chartParameters_____isAmountMonthChartShown">Месячный платеж от суммы кредиты</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isAmountMonthChartShown">
+                                    <div id="isAmountMonthChartShownChart" class="chart">
+                                        <!-- ko if: $root.chartsAreBeingCalculated -->
+                                        <img class="loader" src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." />
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isAmountOverpaymentChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isAmountOverpaymentChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isAmountOverpaymentChartShown&#39;}" id="result_____root_chartParameters_____isAmountOverpaymentChartShown" name="result_____root_chartParameters_____isAmountOverpaymentChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isAmountOverpaymentChartShown&#39;}" for="result_____root_chartParameters_____isAmountOverpaymentChartShown">Переплата от суммы кредита</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isAmountOverpaymentChartShown">
+                                    <div id="isAmountOverpaymentChartShownChart" class="chart">
+                                        <!-- ko if: $root.chartsAreBeingCalculated -->
+                                        <img class="loader" src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." />
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isRateMonthChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isRateMonthChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isRateMonthChartShown&#39;}" id="result_____root_chartParameters_____isRateMonthChartShown" name="result_____root_chartParameters_____isRateMonthChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isRateMonthChartShown&#39;}" for="result_____root_chartParameters_____isRateMonthChartShown">Месячный платеж от ставки</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isRateMonthChartShown">
+                                    <div id="isRateMonthChartShownChart" class="chart">
+                                        <!-- ko if: $root.chartsAreBeingCalculated -->
+                                        <img class="loader" src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." />
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="all-offset1 all-column11 chart-header">
+                                        <input data-bind="checked : isRateOverpaymentChartShown,attr : {id : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isRateOverpaymentChartShown&#39;,name : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isRateOverpaymentChartShown&#39;}" id="result_____root_chartParameters_____isRateOverpaymentChartShown" name="result_____root_chartParameters_____isRateOverpaymentChartShown" type="checkbox" />
+                                        <label class="control-label" data-bind="attr : {&#39;for&#39; : &#39;result&#39; + &#39;.&#39; + &#39;root_chartParameters&#39; + &#39;.&#39; + &#39;isRateOverpaymentChartShown&#39;}" for="result_____root_chartParameters_____isRateOverpaymentChartShown">Переплата от ставки</label>
+                                    </div>
+                                </div>
+                                <div class="row-fluid" data-bind="toggledVisible : isRateOverpaymentChartShown">
+                                    <div id="isRateOverpaymentChartShownChart" class="chart">
+                                        <!-- ko if: $root.chartsAreBeingCalculated -->
+                                        <img class="loader" src="https://fincalculator.ru/img/ajax_loader.gif" alt="Расчет..." />
+                                        <!-- /ko -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                        <div class="row-fluid">
+                            <!-- ko ifnot: $root.isPhoneVisible -->
+                            <table class="table table-bordered result-table hidden-phone">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        №
+                                    </th>
+                                    <th>
+                                        Дата
+                                    </th>
+                                    <th>
+                                        Сумма
+                                    </th>
+                                    <!-- ko if: $root.resultIsDiscounted -->
+                                    <th class="inflation">
+                                        Сумма с учетом инфляции
+                                    </th>
+                                    <!-- /ko -->
+                                    <th>
+                                        Погашение основного долга
+                                    </th>
+                                    <th>
+                                        Выплата процентов
+                                    </th>
+                                    <th>
+                                        Остаток
+                                    </th>
+                                    <!-- ko if: $root.resultIsDiscounted -->
+                                    <th class="inflation">
+                                        Остаток с учетом инфляции
+                                    </th>
+                                    <!-- /ko -->
+                                    <th>
+                                        Описание
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- ko foreach: instalments -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td class="decimal" data-bind="text : number"></td>
+                                    <td class="date" data-bind="text : dateToString(date)"></td>
+                                    <td class="decimal" data-bind="text : decimalToString(amount)"></td>
+                                    <!-- ko if: $root.resultIsDiscounted -->
+                                    <td class="inflation decimal" data-bind="text : decimalToString(inflationAmount)"></td>
+                                    <!-- /ko -->
+                                    <td class="decimal" data-bind="text : decimalToString(payOffAmount)"></td>
+                                    <td class="decimal" data-bind="text : decimalToString(percentAmount)"></td>
+                                    <td class="decimal" data-bind="text : decimalToString(remainder)"></td>
+                                    <!-- ko if: $root.resultIsDiscounted -->
+                                    <td class="inflation decimal" data-bind="text : decimalToString(inflationRemainder)"></td>
+                                    <!-- /ko -->
+                                    <td class="text" data-bind="text : description"></td>
+                                </tr>
+                                <!-- /ko -->
+                                </tbody>
+                            </table>
+                            <!-- /ko -->
+                            <!-- ko if: $root.isPhoneVisible -->
+                            <table class="table table-bordered table-phone visible-phone">
+                                <thead>
+                                <tr>
+                                    <th>
+                                    </th>
+                                    <th>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!-- ko foreach: instalments -->
+                                <!-- ko if: instalmentType == ServerModels.LoanInstalmentType.Payment -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>№</td>
+                                    <td data-bind="text : number"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <!-- ko if: description -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Описание</td>
+                                    <td data-bind="text : description"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Дата</td>
+                                    <td data-bind="text : dateToString(date)"></td>
+                                </tr>
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Сумма</td>
+                                    <td data-bind="text : decimalToString(amount)"></td>
+                                </tr>
+                                <!-- ko if: $root.resultIsDiscounted -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Сумма с учетом инфляции</td>
+                                    <td data-bind="text : decimalToString(inflationAmount)"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <!-- ko if: instalmentType == ServerModels.LoanInstalmentType.Payment || instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Погашение основного долга</td>
+                                    <td data-bind="text : decimalToString(payOffAmount)"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <!-- ko if: $root.resultIsDiscounted -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Сумма с учетом инфляции</td>
+                                    <td data-bind="text : decimalToString(inflationAmount)"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <!-- ko if: instalmentType == ServerModels.LoanInstalmentType.Payment || instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Выплата процентов</td>
+                                    <td data-bind="text : decimalToString(percentAmount)"></td>
+                                </tr>
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Остаток</td>
+                                    <td data-bind="text : decimalToString(remainder)"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <!-- ko if: $root.resultIsDiscounted -->
+                                <tr data-bind="css : {'payment' : instalmentType == ServerModels.LoanInstalmentType.Payment,'commission' : instalmentType == ServerModels.LoanInstalmentType.Commission,'additional-repayment' : instalmentType == ServerModels.LoanInstalmentType.AdditionalRepayment}">
+                                    <td>Остаток с учетом инфляции</td>
+                                    <td data-bind="text : decimalToString(inflationRemainder)"></td>
+                                </tr>
+                                <!-- /ko -->
+                                <tr>
+                                    <td colspan="2"></td>
+                                </tr>
+                                <!-- /ko -->
+                                </tbody>
+                            </table>
+                            <!-- /ko -->
+                        </div>
+                        <div class="row-fluid">
+                            <div class="all-column12">
+                                <button class="btn" data-bind="click : function(){$root.downloadReport();},clickBuble : false" onclick="return false;">Экспорт в Excel</button>
+                            </div>
+                        </div>
+                        <!-- /ko -->
+                    </div>
+                </div>
+                <div id="yandex-desktop"></div>
+                <script type="text/javascript">
+                    (function (w, d, n, s, t) {
+                        var options = [
+                            /*{
+                                renderTo: 'yandex-mobile-mini', blocks: [{ blockId: 'R-A-79310-9', statId: 502 }]
+                            },*/
+                            {
+                                renderTo: 'yandex-desktop', blocks: [{ blockId: 'R-A-79310-8', statId: 501 }]
+                            },
+                            {
+                                renderTo: 'yandex-mobile-maxi', blocks: [{ blockId: 'R-A-79310-12', statId: 504 }]
+                            }
+                        ];
+                        var sendStat = function (ns, name, e) {
+                            try {
+                                if (__server_tracer && __server_tracer.sendEvent) {
+                                    __server_tracer.sendEvent(ns, name, e);
+                                }
+                            } catch (e) {
+                                console.error(e);
+                            }
+                        }
+                        var load = function (options) {
+                            try {
+                                w[n] = w[n] || [];
+                                w[n].push(function () {
+                                    var renderRtb = function (arg) {
+                                        var isHidden = function (nativeElement) {
+                                            if (!nativeElement) {
+                                                return false;
+                                            }
+                                            var style = window.getComputedStyle(nativeElement);
+                                            if (style.display === 'none') {
+                                                return true;
+                                            }
+
+                                            return false;
+                                        }
+                                        if (isHidden(document.getElementById(arg.renderTo)))
+                                            return;
+                                        var idx = Math.round(Math.random() * arg.blocks.length * 1000) % arg.blocks.length;
+                                        var block = arg.blocks[idx];
+                                        var start = Date.now();
+                                        var advSettings = { rtbBlock: block.blockId, statId: block.statId };
+                                        sendStat('Adv', 'Requested', advSettings);
+                                        Ya.Context.AdvManager.render({
+                                                blockId: block.blockId,
+                                                renderTo: arg.renderTo,
+                                                horizontalAlign: true,
+                                                statId: block.statId,
+                                                async: true,
+                                                onRender: function (data) {
+                                                    advSettings['skipped'] = false;
+                                                    advSettings['loadTime'] = Date.now() - start;
+                                                    advSettings['product'] = data && data.product;
+                                                    sendStat('Adv', 'Loaded', advSettings);
+                                                }
+                                            },
+                                            function () {
+                                                advSettings['errorMessage'] = 'The auction failed';
+                                                sendStat('Adv', 'Failed', advSettings);
+                                            });
+                                    };
+                                    for (var i = 0; i < options.length; i++) {
+                                        renderRtb(options[i]);
+                                    }
+                                });
+                                t = d.getElementsByTagName("script")[0];
+                                s = d.createElement("script");
+                                s.type = "text/javascript";
+                                s.src = "https://an.yandex.ru/system/context.js";
+                                s.async = true;
+                                t.parentNode.insertBefore(s, t);
+                            } catch (e) {
+                                console.error(e);
+                            }
+                        };
+                        var isLoaded = function (options) {
+                            for (var i = 0; i < options.length; i++) {
+                                var e = document.getElementById(options[i].renderTo);
+                                var isEmpty = !e.innerHTML || !e.innerHTML.trim();
+                                if (!isEmpty)
+                                    return true;
+                            }
+                            return false;
+                        }
+                        load(options);
+                        setTimeout(function () {
+                            if (!isLoaded(options)) {
+                                load(options)
+                            }
+                        }, 15000);
+                    })(this, this.document, "yandexContextAsyncCallbacks");
+                </script>
+                <div class="clearfix"></div>
+            </div>
+
+
+
+
+
+            <div class="footer">
+
+                <div class="pull-right">
+                    <span>©&nbsp;2010-2021&nbsp;Сергей&nbsp;Чепурнов</span>
+                    <span>|</span>
+                    <span><a href="mailto:support@fincalculator.ru">обратная связь</a></span>
+                    <span>|</span>
+                    <span><a href="https://fincalculator.ru/terms">пользовательское соглашение</a></span>
+                    <span>|</span>
+                    <span><a href="/terms/policy">политика конфиденциальности</a></span>
+                    <span>|</span>
+                    <span>18+</span>
+                </div>
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/Calculators757CD92F042A3A75.js" ></script>
+
+<script type="text/javascript">
+    showSideBar = true;
+
+    var viewModel;
+    jQuery(function(){
+        viewModel = new LoanCalculatorViewModel();
+        viewModel.fromJs({"name":"","loanParameters":{"amount":2000000.0,"rateType":1,"rate":0.12,"periodType":1,"changedByDateRates":null,"period":120,"date":"20210305","paymentType":1,"paymentRoundType":1,"paymentDateType":1,"onlyPercentFirstly":false,"tuneMonthAnnuity":false,"onlyPercentPeriod":12,"mortgageCost":0.0,"calendarTransferType":0,"firstPaymentPolicy":0,"isCalendarTransferTypeAppliedForPercents":false,"percentRoundType":2},"commissionParameters":[{"name":"Страхование предмета залога от повреждения и полного уничтожения [0.3 - 1.0%]","periodicityType":2,"fixedAmount":null,"relativeRate":0.003,"relativeAmountType":6,"relativeAdditionPercent":0.1},{"name":"Страхование жизни и трудоспособности [0.2 - 2%]","periodicityType":2,"fixedAmount":null,"relativeRate":0.002,"relativeAmountType":6,"relativeAdditionPercent":0.1},{"name":"Страхование титула (риска утраты права собственности) [0.3 - 0.8%]","periodicityType":2,"fixedAmount":null,"relativeRate":0.003,"relativeAmountType":6,"relativeAdditionPercent":0.1},{"name":"Комиссия за рассмотрение заявки на получение кредита [0 - 3000р]","periodicityType":1,"fixedAmount":1000.0,"relativeRate":null,"relativeAmountType":-1,"relativeAdditionPercent":null},{"name":"Комиссия за обналичивание кредитных средств [0 - 3%]","periodicityType":1,"fixedAmount":null,"relativeRate":0.01,"relativeAmountType":1,"relativeAdditionPercent":null},{"name":"Комиссия за обслуживание и ведение расчетного счета [0 - 2000р]","periodicityType":2,"fixedAmount":1000.0,"relativeRate":null,"relativeAmountType":0,"relativeAdditionPercent":null},{"name":"Оценка независимого оценщика [1500 - 10000р]","periodicityType":1,"fixedAmount":5000.0,"relativeRate":null,"relativeAmountType":-1,"relativeAdditionPercent":null}],"inflationParameters":{"isDiscounted":false,"rate":0.1,"periodType":1},"loanAdvancedRepayments":null,"loanAdvancedRepaymentPlan":{"payOnDayOfLoanPayment":false,"firstPaymentPolicy":2,"recalculationType":2,"incomes":[]},"effectiveRateType":1});
+        if (viewModel['onAfterInitialized']) viewModel.onAfterInitialized();
+        ko.applyBindings(viewModel);
+    });
+
+
+</script>
+<script type ="text/javascript">
+    jQuery(function () { setTimeout(function () { $("html").removeClass("js"); }, 25); });
+</script>
+</body>
+</html>
