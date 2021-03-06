@@ -2,6 +2,7 @@ package com.egorbarinov.paymentschedulegenerator.entity;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Loan {
 
@@ -9,19 +10,17 @@ public class Loan {
     private LocalDate completionDate;
     private BigDecimal balanceOfDebt;
     private BigDecimal percentRate;
-    private Integer periodOfPayments;
-    private LocalDate dateOfPayment;
-    private BigDecimal percentagesPerMonth;
-    private BigDecimal repaymentOfPrincipalDebtPerMonth;
     private BigDecimal monthlyPayment;
+    private Integer creditPeriod;
+    private List<MonthlyService> monthlyServiceList;
 
-
-    public LocalDate getDateOfPayment() {
-        return dateOfPayment;
-    }
-
-    public void setDateOfPayment(LocalDate dateOfPayment) {
-        this.dateOfPayment = dateOfPayment;
+    public Loan(LocalDate dateOfIssueOfLoan, LocalDate completionDate, BigDecimal balanceOfDebt, BigDecimal percentRate, BigDecimal monthlyPayment, Integer creditPeriod) {
+        this.dateOfIssueOfLoan = dateOfIssueOfLoan;
+        this.completionDate = completionDate;
+        this.balanceOfDebt = balanceOfDebt;
+        this.percentRate = percentRate;
+        this.monthlyPayment = monthlyPayment;
+        this.creditPeriod = creditPeriod;
     }
 
     public LocalDate getDateOfIssueOfLoan() {
@@ -56,28 +55,20 @@ public class Loan {
         this.percentRate = percentRate;
     }
 
-    public Integer getPeriodOfPayments() {
-        return periodOfPayments;
+    public List<MonthlyService> getMonthlyServiceList() {
+        return monthlyServiceList;
     }
 
-    public void setPeriodOfPayments(Integer periodOfPayments) {
-        this.periodOfPayments = periodOfPayments;
+    public void setMonthlyServiceList(List<MonthlyService> monthlyServiceList) {
+        this.monthlyServiceList = monthlyServiceList;
     }
 
-    public BigDecimal getPercentagesPerMonth() {
-        return percentagesPerMonth;
+    public Integer getCreditPeriod() {
+        return creditPeriod;
     }
 
-    public void setPercentagesPerMonth(BigDecimal percentagesPerMonth) {
-        this.percentagesPerMonth = percentagesPerMonth;
-    }
-
-    public BigDecimal getRepaymentOfPrincipalDebtPerMonth() {
-        return repaymentOfPrincipalDebtPerMonth;
-    }
-
-    public void setRepaymentOfPrincipalDebtPerMonth(BigDecimal repaymentOfPrincipalDebtPerMonth) {
-        this.repaymentOfPrincipalDebtPerMonth = repaymentOfPrincipalDebtPerMonth;
+    public void setCreditPeriod(Integer creditPeriod) {
+        this.creditPeriod = creditPeriod;
     }
 
     public BigDecimal getMonthlyPayment() {
@@ -88,16 +79,48 @@ public class Loan {
         this.monthlyPayment = monthlyPayment;
     }
 
-    @Override
-    public String toString() {
-        return "Loan{" +
-                "  periodOfPayments=" + periodOfPayments +
-                ", dateOfPayment=" + dateOfPayment +
-                ", monthlyPayment=" + monthlyPayment +
-                ", percentagesPerMonth=" + percentagesPerMonth +
-                ", repaymentOfPrincipalDebtPerMonth=" + repaymentOfPrincipalDebtPerMonth +
-                ", balanceOfDebt=" + balanceOfDebt +
-                " " +
-                '}';
-    }
+    //    public Integer getPeriodOfPayments() {
+//        return periodOfPayments;
+//    }
+//
+//    public void setPeriodOfPayments(Integer periodOfPayments) {
+//        this.periodOfPayments = periodOfPayments;
+//    }
+//
+//    public BigDecimal getPercentagesPerMonth() {
+//        return percentagesPerMonth;
+//    }
+
+//    public void setPercentagesPerMonth(BigDecimal percentagesPerMonth) {
+//        this.percentagesPerMonth = percentagesPerMonth;
+//    }
+//
+//    public BigDecimal getRepaymentOfPrincipalDebtPerMonth() {
+//        return repaymentOfPrincipalDebtPerMonth;
+//    }
+//
+//    public void setRepaymentOfPrincipalDebtPerMonth(BigDecimal repaymentOfPrincipalDebtPerMonth) {
+//        this.repaymentOfPrincipalDebtPerMonth = repaymentOfPrincipalDebtPerMonth;
+//    }
+//
+//    public BigDecimal getMonthlyPayment() {
+//        return monthlyPayment;
+//    }
+//
+//    public void setMonthlyPayment(BigDecimal monthlyPayment) {
+//        this.monthlyPayment = monthlyPayment;
+//    }
+
+//    @Override
+//    public String toString() {
+//        return "Loan{" +
+//                "  periodOfPayments=" + periodOfPayments +
+//                ", dateOfPayment=" + dateOfPayment +
+//                ", monthlyPayment=" + monthlyPayment +
+//                ", percentagesPerMonth=" + percentagesPerMonth +
+//                ", repaymentOfPrincipalDebtPerMonth=" + repaymentOfPrincipalDebtPerMonth +
+//                ", balanceOfDebt=" + balanceOfDebt +
+//                " " +
+//                '}';
+//    }
 }
