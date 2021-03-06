@@ -28,7 +28,10 @@ public class LoanService {
     }
 
     public static int monthlyPayment(Loan loan) {
-        if (numberOfPayments.equals(loan.getCreditPeriod())) return 0;
+        if (numberOfPayments.equals(loan.getCreditPeriod())) {
+            loan.setMonthlyServiceList(list);
+            return 0;
+        }
 
         MonthlyService payment = new MonthlyService();
         payment.setBalanceOfDebt(loan.getBalanceOfDebt());
@@ -55,7 +58,6 @@ public class LoanService {
         payment.setPercentagesPerMonth(percentagesPerMonth.setScale(2, RoundingMode.HALF_UP));
         payment.setBalanceOfDebt(getNewBalance(loan, payment));
         list.add(payment);
-        loan.setMonthlyServiceList(list);
 
         return monthlyPayment(loan);
     }

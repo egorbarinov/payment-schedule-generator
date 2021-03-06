@@ -79,48 +79,4 @@ public class Loan {
         this.monthlyPayment = monthlyPayment;
     }
 
-    //    public Integer getPeriodOfPayments() {
-//        return periodOfPayments;
-//    }
-//
-//    public void setPeriodOfPayments(Integer periodOfPayments) {
-//        this.periodOfPayments = periodOfPayments;
-//    }
-//
-//    public BigDecimal getPercentagesPerMonth() {
-//        return percentagesPerMonth;
-//    }
-
-//    public void setPercentagesPerMonth(BigDecimal percentagesPerMonth) {
-//        this.percentagesPerMonth = percentagesPerMonth;
-//    }
-//
-//    public BigDecimal getRepaymentOfPrincipalDebtPerMonth() {
-//        return repaymentOfPrincipalDebtPerMonth;
-//    }
-//
-//    public void setRepaymentOfPrincipalDebtPerMonth(BigDecimal repaymentOfPrincipalDebtPerMonth) {
-//        this.repaymentOfPrincipalDebtPerMonth = repaymentOfPrincipalDebtPerMonth;
-//    }
-//
-//    public BigDecimal getMonthlyPayment() {
-//        return monthlyPayment;
-//    }
-//
-//    public void setMonthlyPayment(BigDecimal monthlyPayment) {
-//        this.monthlyPayment = monthlyPayment;
-//    }
-
-//    @Override
-//    public String toString() {
-//        return "Loan{" +
-//                "  periodOfPayments=" + periodOfPayments +
-//                ", dateOfPayment=" + dateOfPayment +
-//                ", monthlyPayment=" + monthlyPayment +
-//                ", percentagesPerMonth=" + percentagesPerMonth +
-//                ", repaymentOfPrincipalDebtPerMonth=" + repaymentOfPrincipalDebtPerMonth +
-//                ", balanceOfDebt=" + balanceOfDebt +
-//                " " +
-//                '}';
-//    }
 }
