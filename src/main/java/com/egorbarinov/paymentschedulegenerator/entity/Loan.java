@@ -29,6 +29,9 @@ public class Loan {
         this.creditPeriod = creditPeriod;
     }
 
+    public Loan() {
+    }
+
     public BigDecimal getAmount() {
         return amount;
     }
