@@ -3,7 +3,7 @@ package com.egorbarinov.paymentschedulegenerator.entity;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class MonthlyService {
+public class MonthlyPayment {
 
     private Integer countOfPay;
     private LocalDate dateOfPayment;

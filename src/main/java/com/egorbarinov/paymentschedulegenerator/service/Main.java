@@ -27,14 +27,11 @@ public class Main {
                 .divide(BigDecimal.valueOf(365), 2, RoundingMode.HALF_UP);
         System.out.println(percentOf365);
         BigDecimal percentOf366 = op.multiply(interest.multiply(BigDecimal.valueOf(dayOf366)))
-                .divide(BigDecimal.valueOf(366),2, RoundingMode.HALF_UP);
+                .divide(BigDecimal.valueOf(366), 2, RoundingMode.HALF_UP);
 
         System.out.println(percentOf366);
         System.out.println(percentOf365.add(percentOf366));     //должно быть 27754,43
 
-
-
-
-
     }
+
 }
