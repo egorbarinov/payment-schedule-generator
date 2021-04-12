@@ -19,6 +19,9 @@ public class ExcelReportView extends AbstractXlsView {
         response.setHeader("Content-Disposition", "attachment;filename=\"report.xls\"");
         Loan loan = (Loan) model.get("reportLoan");
         CellStyle style = workbook.createCellStyle();
+        CreationHelper createHelper = workbook.getCreationHelper();
+        CellStyle dateCell = workbook.createCellStyle();
+        dateCell.setDataFormat(createHelper.createDataFormat().getFormat("dd.MM.yyyy"));
         Sheet sheet = workbook.createSheet("Payment schedule");
 
         int width = (int) (14 * 1.14388) * 256; // 1757;
@@ -33,6 +36,11 @@ public class ExcelReportView extends AbstractXlsView {
         style.setBorderRight(BorderStyle.THIN);
         style.setBorderBottom(BorderStyle.THIN);
         style.setBorderLeft(BorderStyle.THIN);
+
+        dateCell.setBorderTop(BorderStyle.THIN);
+        dateCell.setBorderRight(BorderStyle.THIN);
+        dateCell.setBorderBottom(BorderStyle.THIN);
+        dateCell.setBorderLeft(BorderStyle.THIN);
 // Определение цвета граничных значений стиля
 
         style.setTopBorderColor(IndexedColors.BLACK.getIndex());
@@ -40,9 +48,18 @@ public class ExcelReportView extends AbstractXlsView {
         style.setBottomBorderColor(IndexedColors.BLACK.getIndex());
         style.setLeftBorderColor(IndexedColors.BLACK.getIndex());
 
+        dateCell.setTopBorderColor(IndexedColors.BLACK.getIndex());
+        dateCell.setRightBorderColor(IndexedColors.BLACK.getIndex());
+        dateCell.setBottomBorderColor(IndexedColors.BLACK.getIndex());
+        dateCell.setLeftBorderColor(IndexedColors.BLACK.getIndex());
+
         style.setWrapText(true);
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setVerticalAlignment(VerticalAlignment.CENTER);
+
+        dateCell.setWrapText(true);
+        dateCell.setAlignment(HorizontalAlignment.CENTER);
+        dateCell.setVerticalAlignment(VerticalAlignment.CENTER);
 
         String header;
         Row row = sheet.createRow((short) 0);
@@ -130,8 +147,10 @@ public class ExcelReportView extends AbstractXlsView {
             cell.setCellStyle(style);
             cell.setCellValue(payment.getCountOfPay());
             cell = row.createCell(1);
-            cell.setCellStyle(style);
-            cell.setCellValue(ScheduleGeneratorUtil.formatLocalDate(payment.getDateOfPayment()));
+//            cell.setCellStyle(style);
+//            cell.setCellValue(ScheduleGeneratorUtil.formatLocalDate(payment.getDateOfPayment())); //11/04/2021
+            cell.setCellStyle(dateCell);
+            cell.setCellValue(payment.getDateOfPayment());
             cell = row.createCell(2);
             cell.setCellStyle(style);
             cell.setCellValue(ScheduleGeneratorUtil.formatBigDecimalToRuLocale(payment.getMonthlyPayment()));

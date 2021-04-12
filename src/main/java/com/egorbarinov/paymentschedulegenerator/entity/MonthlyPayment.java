@@ -1,8 +1,17 @@
 package com.egorbarinov.paymentschedulegenerator.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class MonthlyPayment {
 
     private Integer countOfPay;
@@ -12,63 +21,6 @@ public class MonthlyPayment {
     private BigDecimal percentagesPerMonth;
     private BigDecimal balanceOfDebt;
 
-    public Integer getCountOfPay() {
-        return countOfPay;
-    }
 
-    public void setCountOfPay(Integer countOfPay) {
-        this.countOfPay = countOfPay;
-    }
 
-    public LocalDate getDateOfPayment() {
-        return dateOfPayment;
-    }
-
-    public void setDateOfPayment(LocalDate dateOfPayment) {
-        this.dateOfPayment = dateOfPayment;
-    }
-
-    public BigDecimal getMonthlyPayment() {
-        return monthlyPayment;
-    }
-
-    public void setMonthlyPayment(BigDecimal monthlyPayment) {
-        this.monthlyPayment = monthlyPayment;
-    }
-
-    public BigDecimal getRepaymentOfPrincipalDebtPerMonth() {
-        return repaymentOfPrincipalDebtPerMonth;
-    }
-
-    public void setRepaymentOfPrincipalDebtPerMonth(BigDecimal repaymentOfPrincipalDebtPerMonth) {
-        this.repaymentOfPrincipalDebtPerMonth = repaymentOfPrincipalDebtPerMonth;
-    }
-
-    public BigDecimal getPercentagesPerMonth() {
-        return percentagesPerMonth;
-    }
-
-    public void setPercentagesPerMonth(BigDecimal percentagesPerMonth) {
-        this.percentagesPerMonth = percentagesPerMonth;
-    }
-
-    public BigDecimal getBalanceOfDebt() {
-        return balanceOfDebt;
-    }
-
-    public void setBalanceOfDebt(BigDecimal balanceOfDebt) {
-        this.balanceOfDebt = balanceOfDebt;
-    }
-
-    @Override
-    public String toString() {
-        return "MonthlyService{" +
-                "countOfPay=" + countOfPay +
-                ", dateOfPayment=" + dateOfPayment +
-                ", monthlyPayment=" + monthlyPayment +
-                ", repaymentOfPrincipalDebtPerMonth=" + repaymentOfPrincipalDebtPerMonth +
-                ", percentagesPerMonth=" + percentagesPerMonth +
-                ", balanceOfDebt=" + balanceOfDebt +
-                '}';
-    }
 }

@@ -1,7 +1,7 @@
 package com.egorbarinov.paymentschedulegenerator.service;
 
-import com.egorbarinov.paymentschedulegenerator.entity.Loan;
 import com.egorbarinov.paymentschedulegenerator.entity.MonthlyPayment;
+import com.egorbarinov.paymentschedulegenerator.entity.Loan;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
@@ -12,7 +12,8 @@ import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 @Scope(value = "prototype", proxyMode= ScopedProxyMode.TARGET_CLASS)

@@ -1,11 +1,19 @@
 package com.egorbarinov.paymentschedulegenerator.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Loan {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -29,67 +37,5 @@ public class Loan {
         this.creditPeriod = creditPeriod;
     }
 
-    public Loan() {
-    }
-
-    public BigDecimal getAmount() {
-        return amount;
-    }
-
-    public List<MonthlyPayment> getMonthlyPaymentList() {
-        return monthlyPaymentList;
-    }
-
-    public void setMonthlyPaymentList(List<MonthlyPayment> monthlyPaymentList) {
-        this.monthlyPaymentList = monthlyPaymentList;
-    }
-
-    public LocalDate getDateOfIssueOfLoan() {
-        return dateOfIssueOfLoan;
-    }
-
-    public void setDateOfIssueOfLoan(LocalDate dateOfIssueOfLoan) {
-        this.dateOfIssueOfLoan = dateOfIssueOfLoan;
-    }
-
-    public LocalDate getCompletionDate() {
-        return completionDate;
-    }
-
-    public void setCompletionDate(LocalDate completionDate) {
-        this.completionDate = completionDate;
-    }
-
-    public BigDecimal getBalanceOfDebt() {
-        return balanceOfDebt;
-    }
-
-    public void setBalanceOfDebt(BigDecimal balanceOfDebt) {
-        this.balanceOfDebt = balanceOfDebt;
-    }
-
-    public BigDecimal getPercentRate() {
-        return percentRate;
-    }
-
-    public void setPercentRate(BigDecimal percentRate) {
-        this.percentRate = percentRate;
-    }
-
-    public Integer getCreditPeriod() {
-        return creditPeriod;
-    }
-
-    public void setCreditPeriod(Integer creditPeriod) {
-        this.creditPeriod = creditPeriod;
-    }
-
-    public BigDecimal getMonthlyPayment() {
-        return monthlyPayment;
-    }
-
-    public void setMonthlyPayment(BigDecimal monthlyPayment) {
-        this.monthlyPayment = monthlyPayment;
-    }
 
 }
