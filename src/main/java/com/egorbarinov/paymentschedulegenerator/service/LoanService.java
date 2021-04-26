@@ -29,6 +29,7 @@ public class LoanService {
 
     //рассчитать дату последнего платежного периода, рассчитать ежемесячный платежб создать кредит
     public Loan creditCalculation(LocalDate dateOfIssueOfLoan, BigDecimal amount, BigDecimal interest, Integer creditPeriod) {
+
         LocalDate completionDate = dateOfIssueOfLoan.plusMonths(creditPeriod);
         BigDecimal monthlyPayment = calculateMonthlyPayment(amount, interest, creditPeriod);
         return new Loan(dateOfIssueOfLoan,completionDate,amount,interest,monthlyPayment,creditPeriod);
@@ -65,11 +66,11 @@ public class LoanService {
             list.add(payment);
         }
         loan.setMonthlyPaymentList(list);
-
-    }
+  }
 
     // расчет остатка задолженности по аннуитетному кредиту
     private BigDecimal getNewBalance(Loan loan, MonthlyPayment payment) {
+
         BigDecimal newBalanceOfDebt;
         if (!payment.getDateOfPayment().equals(loan.getCompletionDate())) {
             BigDecimal repaymentOfPrincipalDebtPerMonth = loan.getMonthlyPayment().subtract(payment.getPercentagesPerMonth()).setScale(2, RoundingMode.HALF_UP);
@@ -108,10 +109,10 @@ public class LoanService {
     }
 
     public static void main(String[] args) {
+
         LoanService service = new LoanService();
         Loan loan = service.creditCalculation(LocalDate.of(2017,12,27), new BigDecimal("3330802.20"), new BigDecimal("11.2"), 120);
         service.paymentSchedule(loan);
-
     }
 
 }
