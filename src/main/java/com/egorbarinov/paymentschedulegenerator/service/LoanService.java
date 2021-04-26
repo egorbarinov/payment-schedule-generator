@@ -53,9 +53,9 @@ public class LoanService {
             Month month = payment.getDateOfPayment().getMonth();
             if (month.equals(Month.JANUARY)){
                 countDaysOfYear = ((payment.getDateOfPayment().minusMonths(1).getYear() % 4 == 0) && (payment.getDateOfPayment().minusMonths(1).getYear() % 100 != 0) || (payment.getDateOfPayment().minusMonths(1).getYear() % 400 == 0) ? 366 : 365);
-                BigDecimal percentagesAsOfDecember = chargeInterest(loan.getBalanceOfDebt(), 4, countDaysOfYear, loan.getPercentRate());
+                BigDecimal percentagesAsOfDecember = chargeInterest(loan.getBalanceOfDebt(), (Month.DECEMBER.maxLength() - payment.getDateOfPayment().minusMonths(1).getDayOfMonth()), countDaysOfYear, loan.getPercentRate());
                 countDaysOfYear = ((payment.getDateOfPayment().getYear() % 4 == 0) && (payment.getDateOfPayment().getYear() % 100 != 0) || (payment.getDateOfPayment().getYear() % 400 == 0) ? 366 : 365);
-                BigDecimal percentagesAsOfJanuaryOfNewYear = chargeInterest(loan.getBalanceOfDebt(), 27, countDaysOfYear, loan.getPercentRate());
+                BigDecimal percentagesAsOfJanuaryOfNewYear = chargeInterest(loan.getBalanceOfDebt(), payment.getDateOfPayment().getDayOfMonth(), countDaysOfYear, loan.getPercentRate());
                 percentagesPerMonth = percentagesAsOfDecember.add(percentagesAsOfJanuaryOfNewYear).setScale(2, RoundingMode.HALF_UP);
             } else {
                 percentagesPerMonth = chargeInterest(loan.getBalanceOfDebt(), deltaDates, countDaysOfYear, loan.getPercentRate()).setScale(2, RoundingMode.HALF_UP);
@@ -65,6 +65,11 @@ public class LoanService {
             list.add(payment);
         }
         loan.setMonthlyPaymentList(list);
+
+    }
+
+    private int getDeltaDays(MonthlyPayment payment) {
+        return payment.getDateOfPayment().getMonth().maxLength() - payment.getDateOfPayment().getDayOfMonth();
 
     }
 
@@ -111,6 +116,7 @@ public class LoanService {
         LoanService service = new LoanService();
         Loan loan = service.creditCalculation(LocalDate.of(2017,12,27), new BigDecimal("3330802.20"), new BigDecimal("11.2"), 120);
         service.paymentSchedule(loan);
+
     }
 
 }
