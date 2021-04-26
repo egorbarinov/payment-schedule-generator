@@ -68,11 +68,6 @@ public class LoanService {
 
     }
 
-    private int getDeltaDays(MonthlyPayment payment) {
-        return payment.getDateOfPayment().getMonth().maxLength() - payment.getDateOfPayment().getDayOfMonth();
-
-    }
-
     // расчет остатка задолженности по аннуитетному кредиту
     private BigDecimal getNewBalance(Loan loan, MonthlyPayment payment) {
         BigDecimal newBalanceOfDebt;
