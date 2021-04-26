@@ -1,4 +1,12 @@
+#server:
+#  port: 8189
+#  servlet:
+#    context-path: /mortgage-calculator
+
+
 server:
-  port: 8189
+  hostname: localhost
+  port: ${PORT:8189}
+
   servlet:
-    context-path: /mortgage-calculator
+    context-path: /

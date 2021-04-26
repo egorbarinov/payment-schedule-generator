@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="col-md-10 text-center">
+        <br/>
+        <h2>Ипотечный калькулятор</h2>
+        <br/>
+        <br/>
+
+        <form action="#" th:action="@{/doCalculate}" method="post" th:object="${loan}">
+
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault01">Сумма</label>
+                    <input type="number" step="0.01" class="form-control" id="validationDefault01" th:field="${loan.balanceOfDebt}" placeholder="Сумма" value="3330802.20" required>
+                    <p> <errors path="amountToConverted" th:utext="${amountError}"></errors></p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault02">Срок кредита</label>
+                    <input type="number" class="form-control" id="validationDefault02" th:field="${loan.creditPeriod}" placeholder="Срок в месяцах" value="120" required>
+                    <p> <errors path="amountToConverted" th:utext="${amountError}"></errors></p>
+                </div>
+                <div class="col-md-4 mb-3">
+                <label for="validationDefault03">Дата получения</label>
+                <input type="date" class="form-control" id="validationDefault03" th:field="${loan.dateOfIssueOfLoan}" placeholder="Дата получения" value="27.12.2017" required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault04">Ставка</label>
+                    <input type="number" step="0.01" class="form-control" id="validationDefault04" th:field="${loan.percentRate}" placeholder="Годовая процентная ставка %" value="11.20" required>
+                    <p> <errors path="amountToConverted" th:utext="${amountError}"></errors></p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="validationDefault05">Тип платежей</label>
+                    <input type="text" class="form-control" id="validationDefault05" placeholder="Аннуитетные" readonly value="Аннуитетные" required>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Построить график платежей</button>
+        </form>
+    </div>
+
+    <form action="#" th:action="@{/report}" method="get">
+        <button class="btn btn-primary" type="submit">Сохранить рассчет</button>
+    </form>
+
+
+    <div class="col-md-10 text-center" th:object="${payments}">
+        <br />
+        <br />
+
+        <table class="table table-hover">
+            <thead class="head-dark">
+            <tr>
+                <td>№</td>
+                <td>Дата платежа</td>
+                <td>Сумма</td>
+                <td>Погашение основного долга</td>
+                <td>Выплата процентов</td>
+                <td>Остаток</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="payment : ${payments}">
+                <td th:utext="${payment.countOfPay}"></td>
+                <td th:utext="${payment.dateOfPayment}"></td>
+                <td th:utext="${payment.monthlyPayment}"></td>
+                <td th:utext="${payment.repaymentOfPrincipalDebtPerMonth}"></td>
+                <td th:utext="${payment.percentagesPerMonth}"></td>
+                <td th:utext="${payment.balanceOfDebt}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
