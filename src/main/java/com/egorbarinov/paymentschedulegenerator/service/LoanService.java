@@ -38,7 +38,7 @@ public class LoanService {
     public void paymentSchedule(Loan loan) {
         list.clear();
         while (!numberOfPayments.equals(loan.getCreditPeriod())) {
-            MonthlyPayment payment = new MonthlyPayment();
+            var payment = new MonthlyPayment();
             payment.setBalanceOfDebt(loan.getBalanceOfDebt());
             payment.setMonthlyPayment(loan.getMonthlyPayment().setScale(2, RoundingMode.HALF_UP));
             long deltaDates = ChronoUnit.DAYS.between(loan.getDateOfIssueOfLoan()
@@ -47,14 +47,14 @@ public class LoanService {
             payment.setDateOfPayment(loan.getDateOfIssueOfLoan().plusMonths(numberOfPayments));
             payment.setCountOfPay(numberOfPayments);
 
-            int countDaysOfYear = ((payment.getDateOfPayment().getYear() % 4 == 0) && (payment.getDateOfPayment().getYear() % 100 != 0) || (payment.getDateOfPayment().getYear() % 400 == 0) ? 366 : 365);
+            int countDaysOfYear = (getNumberOfDaysInYear(payment.getDateOfPayment()));
             BigDecimal percentagesPerMonth;
 
             Month month = payment.getDateOfPayment().getMonth();
             if (month.equals(Month.JANUARY)){
-                countDaysOfYear = ((payment.getDateOfPayment().minusMonths(1).getYear() % 4 == 0) && (payment.getDateOfPayment().minusMonths(1).getYear() % 100 != 0) || (payment.getDateOfPayment().minusMonths(1).getYear() % 400 == 0) ? 366 : 365);
+                countDaysOfYear = getNumberOfDaysInYear(payment.getDateOfPayment().minusMonths(1));
                 BigDecimal percentagesAsOfDecember = chargeInterest(loan.getBalanceOfDebt(), (Month.DECEMBER.maxLength() - payment.getDateOfPayment().minusMonths(1).getDayOfMonth()), countDaysOfYear, loan.getPercentRate());
-                countDaysOfYear = ((payment.getDateOfPayment().getYear() % 4 == 0) && (payment.getDateOfPayment().getYear() % 100 != 0) || (payment.getDateOfPayment().getYear() % 400 == 0) ? 366 : 365);
+                countDaysOfYear = getNumberOfDaysInYear(payment.getDateOfPayment());
                 BigDecimal percentagesAsOfJanuaryOfNewYear = chargeInterest(loan.getBalanceOfDebt(), payment.getDateOfPayment().getDayOfMonth(), countDaysOfYear, loan.getPercentRate());
                 percentagesPerMonth = percentagesAsOfDecember.add(percentagesAsOfJanuaryOfNewYear).setScale(2, RoundingMode.HALF_UP);
             } else {
@@ -66,6 +66,10 @@ public class LoanService {
         }
         loan.setMonthlyPaymentList(list);
 
+    }
+
+    private int getNumberOfDaysInYear(LocalDate dateOfPayment) {
+        return (dateOfPayment.getYear() % 4 == 0) && (dateOfPayment.getYear() % 100 != 0) || (dateOfPayment.getYear() % 400 == 0) ? 366 : 365;
     }
 
     // расчет остатка задолженности по аннуитетному кредиту
