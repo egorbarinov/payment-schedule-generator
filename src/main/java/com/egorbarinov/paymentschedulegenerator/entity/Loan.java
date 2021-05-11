@@ -25,7 +25,7 @@ public class Loan {
     private BigDecimal percentRate;
     private BigDecimal monthlyPayment;
     private Integer creditPeriod;
-    private List<MonthlyPayment> monthlyPaymentList;
+    private List<MonthlyLoanServicing> monthlyServiceList;
 
     public Loan(LocalDate dateOfIssueOfLoan, LocalDate completionDate, BigDecimal balanceOfDebt, BigDecimal percentRate, BigDecimal monthlyPayment, Integer creditPeriod) {
         this.amount = balanceOfDebt;

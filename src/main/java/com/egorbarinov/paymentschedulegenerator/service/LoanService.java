@@ -1,6 +1,6 @@
 package com.egorbarinov.paymentschedulegenerator.service;
 
-import com.egorbarinov.paymentschedulegenerator.entity.MonthlyPayment;
+import com.egorbarinov.paymentschedulegenerator.entity.MonthlyLoanServicing;
 import com.egorbarinov.paymentschedulegenerator.entity.Loan;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -19,7 +19,7 @@ import java.util.List;
 @Scope(value = "prototype", proxyMode= ScopedProxyMode.TARGET_CLASS)
 public class LoanService {
 
-    private List<MonthlyPayment> list;
+    private List<MonthlyLoanServicing> list;
 
     public LoanService() {
         this.list = new ArrayList<>();
@@ -38,33 +38,33 @@ public class LoanService {
     public void paymentSchedule(Loan loan) {
         list.clear();
         while (!numberOfPayments.equals(loan.getCreditPeriod())) {
-            var payment = new MonthlyPayment();
-            payment.setBalanceOfDebt(loan.getBalanceOfDebt());
-            payment.setMonthlyPayment(loan.getMonthlyPayment().setScale(2, RoundingMode.HALF_UP));
+            var loanServicing = new MonthlyLoanServicing();
+            loanServicing.setBalanceOfDebt(loan.getBalanceOfDebt());
+            loanServicing.setMonthlyPayment(loan.getMonthlyPayment().setScale(2, RoundingMode.HALF_UP));
             long deltaDates = ChronoUnit.DAYS.between(loan.getDateOfIssueOfLoan()
                     .plusMonths(numberOfPayments), loan.getDateOfIssueOfLoan()
                     .plusMonths(++numberOfPayments));
-            payment.setDateOfPayment(loan.getDateOfIssueOfLoan().plusMonths(numberOfPayments));
-            payment.setCountOfPay(numberOfPayments);
+            loanServicing.setDateOfPayment(loan.getDateOfIssueOfLoan().plusMonths(numberOfPayments));
+            loanServicing.setCountOfPay(numberOfPayments);
 
-            int countDaysOfYear = (getNumberOfDaysInYear(payment.getDateOfPayment()));
+            int countDaysOfYear = (getNumberOfDaysInYear(loanServicing.getDateOfPayment()));
             BigDecimal percentagesPerMonth;
 
-            Month month = payment.getDateOfPayment().getMonth();
+            Month month = loanServicing.getDateOfPayment().getMonth();
             if (month.equals(Month.JANUARY)){
-                countDaysOfYear = getNumberOfDaysInYear(payment.getDateOfPayment().minusMonths(1));
-                BigDecimal percentagesAsOfDecember = chargeInterest(loan.getBalanceOfDebt(), (Month.DECEMBER.maxLength() - payment.getDateOfPayment().minusMonths(1).getDayOfMonth()), countDaysOfYear, loan.getPercentRate());
-                countDaysOfYear = getNumberOfDaysInYear(payment.getDateOfPayment());
-                BigDecimal percentagesAsOfJanuaryOfNewYear = chargeInterest(loan.getBalanceOfDebt(), payment.getDateOfPayment().getDayOfMonth(), countDaysOfYear, loan.getPercentRate());
+                countDaysOfYear = getNumberOfDaysInYear(loanServicing.getDateOfPayment().minusMonths(1));
+                BigDecimal percentagesAsOfDecember = chargeInterest(loan.getBalanceOfDebt(), (Month.DECEMBER.maxLength() - loanServicing.getDateOfPayment().minusMonths(1).getDayOfMonth()), countDaysOfYear, loan.getPercentRate());
+                countDaysOfYear = getNumberOfDaysInYear(loanServicing.getDateOfPayment());
+                BigDecimal percentagesAsOfJanuaryOfNewYear = chargeInterest(loan.getBalanceOfDebt(), loanServicing.getDateOfPayment().getDayOfMonth(), countDaysOfYear, loan.getPercentRate());
                 percentagesPerMonth = percentagesAsOfDecember.add(percentagesAsOfJanuaryOfNewYear).setScale(2, RoundingMode.HALF_UP);
             } else {
                 percentagesPerMonth = chargeInterest(loan.getBalanceOfDebt(), deltaDates, countDaysOfYear, loan.getPercentRate()).setScale(2, RoundingMode.HALF_UP);
             }
-            payment.setPercentagesPerMonth(percentagesPerMonth.setScale(2, RoundingMode.HALF_UP));
-            payment.setBalanceOfDebt(getNewBalance(loan, payment));
-            list.add(payment);
+            loanServicing.setPercentagesPerMonth(percentagesPerMonth.setScale(2, RoundingMode.HALF_UP));
+            loanServicing.setBalanceOfDebt(getNewBalance(loan, loanServicing));
+            list.add(loanServicing);
         }
-        loan.setMonthlyPaymentList(list);
+        loan.setMonthlyServiceList(list);
 
     }
 
@@ -73,20 +73,20 @@ public class LoanService {
     }
 
     // расчет остатка задолженности по аннуитетному кредиту
-    private BigDecimal getNewBalance(Loan loan, MonthlyPayment payment) {
+    private BigDecimal getNewBalance(Loan loan, MonthlyLoanServicing loanServicing) {
         BigDecimal newBalanceOfDebt;
-        if (!payment.getDateOfPayment().equals(loan.getCompletionDate())) {
-            BigDecimal repaymentOfPrincipalDebtPerMonth = loan.getMonthlyPayment().subtract(payment.getPercentagesPerMonth()).setScale(2, RoundingMode.HALF_UP);
-            payment.setRepaymentOfPrincipalDebtPerMonth(repaymentOfPrincipalDebtPerMonth);
+        if (!loanServicing.getDateOfPayment().equals(loan.getCompletionDate())) {
+            BigDecimal repaymentOfPrincipalDebtPerMonth = loan.getMonthlyPayment().subtract(loanServicing.getPercentagesPerMonth()).setScale(2, RoundingMode.HALF_UP);
+            loanServicing.setRepaymentOfPrincipalDebtPerMonth(repaymentOfPrincipalDebtPerMonth);
             newBalanceOfDebt = loan.getBalanceOfDebt().subtract(repaymentOfPrincipalDebtPerMonth).setScale(2, RoundingMode.HALF_UP);
             loan.setBalanceOfDebt(newBalanceOfDebt);
 
         } else {
-            if (payment.getMonthlyPayment().compareTo(loan.getBalanceOfDebt()) >= 0) {
-                payment.setMonthlyPayment(loan.getBalanceOfDebt().add(payment.getPercentagesPerMonth()).setScale(2, RoundingMode.HALF_UP));
+            if (loanServicing.getMonthlyPayment().compareTo(loan.getBalanceOfDebt()) >= 0) {
+                loanServicing.setMonthlyPayment(loan.getBalanceOfDebt().add(loanServicing.getPercentagesPerMonth()).setScale(2, RoundingMode.HALF_UP));
             }
-            BigDecimal repaymentOfPrincipalDebtPerMonth = payment.getMonthlyPayment().subtract(payment.getPercentagesPerMonth());
-            payment.setRepaymentOfPrincipalDebtPerMonth(repaymentOfPrincipalDebtPerMonth.setScale(2, RoundingMode.HALF_UP));
+            BigDecimal repaymentOfPrincipalDebtPerMonth = loanServicing.getMonthlyPayment().subtract(loanServicing.getPercentagesPerMonth());
+            loanServicing.setRepaymentOfPrincipalDebtPerMonth(repaymentOfPrincipalDebtPerMonth.setScale(2, RoundingMode.HALF_UP));
             newBalanceOfDebt = BigDecimal.ZERO;
             loan.setBalanceOfDebt(newBalanceOfDebt.setScale(2, RoundingMode.HALF_UP));
         }
