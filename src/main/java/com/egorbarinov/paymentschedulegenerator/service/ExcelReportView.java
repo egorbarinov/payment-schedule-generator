@@ -2,7 +2,7 @@ package com.egorbarinov.paymentschedulegenerator.service;
 
 import com.egorbarinov.paymentschedulegenerator.common.ScheduleGeneratorUtil;
 import com.egorbarinov.paymentschedulegenerator.entity.Loan;
-import com.egorbarinov.paymentschedulegenerator.entity.MonthlyPayment;
+import com.egorbarinov.paymentschedulegenerator.entity.MonthlyLoanServicing;
 import org.apache.poi.ss.usermodel.*;
 import org.springframework.web.servlet.view.document.AbstractXlsView;
 
@@ -141,7 +141,7 @@ public class ExcelReportView extends AbstractXlsView {
         cell.setCellStyle(style);
 
         int rowNum = 8;
-        for(MonthlyPayment payment : loan.getMonthlyPaymentList()){
+        for(MonthlyLoanServicing payment : loan.getMonthlyServiceList()){
             row = sheet.createRow(rowNum++);
             cell = row.createCell(0);
             cell.setCellStyle(style);

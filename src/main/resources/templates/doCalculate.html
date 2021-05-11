@@ -79,7 +79,7 @@
             <tr th:each="payment : ${payments}">
                 <td th:utext="${payment.countOfPay}"></td>
                 <td th:utext="${payment.dateOfPayment}"></td>
-                <td th:utext="${payment.monthlyPayment}"></td>
+                <td th:utext="${payment.getMonthlyPayment}"></td>
                 <td th:utext="${payment.repaymentOfPrincipalDebtPerMonth}"></td>
                 <td th:utext="${payment.percentagesPerMonth}"></td>
                 <td th:utext="${payment.balanceOfDebt}"></td>

@@ -44,7 +44,7 @@ public class LoanController {
                 , loan.getCreditPeriod());
         loanService.paymentSchedule(loan);
         reportLoan = loan;
-        model.addAttribute("payments", loan.getMonthlyPaymentList());
+        model.addAttribute("payments", loan.getMonthlyServiceList());
         return "doCalculate";
     }
 

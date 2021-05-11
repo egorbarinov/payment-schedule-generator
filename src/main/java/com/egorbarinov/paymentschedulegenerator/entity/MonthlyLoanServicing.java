@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class MonthlyPayment {
+public class MonthlyLoanServicing {
 
     private Integer countOfPay;
     private LocalDate dateOfPayment;
@@ -20,7 +20,5 @@ public class MonthlyPayment {
     private BigDecimal repaymentOfPrincipalDebtPerMonth;
     private BigDecimal percentagesPerMonth;
     private BigDecimal balanceOfDebt;
-
-
 
 }
