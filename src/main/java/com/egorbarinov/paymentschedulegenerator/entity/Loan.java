@@ -37,5 +37,4 @@ public class Loan {
         this.creditPeriod = creditPeriod;
     }
 
-
 }

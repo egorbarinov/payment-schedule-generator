@@ -29,6 +29,7 @@ public class LoanService {
 
     //рассчитать дату последнего платежного периода, рассчитать ежемесячный платежб создать кредит
     public Loan creditCalculation(LocalDate dateOfIssueOfLoan, BigDecimal amount, BigDecimal interest, Integer creditPeriod) {
+
         LocalDate completionDate = dateOfIssueOfLoan.plusMonths(creditPeriod);
         BigDecimal monthlyPayment = calculateMonthlyPayment(amount, interest, creditPeriod);
         return new Loan(dateOfIssueOfLoan,completionDate,amount,interest,monthlyPayment,creditPeriod);
@@ -112,10 +113,10 @@ public class LoanService {
     }
 
     public static void main(String[] args) {
+
         LoanService service = new LoanService();
         Loan loan = service.creditCalculation(LocalDate.of(2017,12,27), new BigDecimal("3330802.20"), new BigDecimal("11.2"), 120);
         service.paymentSchedule(loan);
-
     }
 
 }
